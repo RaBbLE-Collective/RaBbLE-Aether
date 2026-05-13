@@ -77,7 +77,7 @@ html, body {
   position: absolute; inset: 0;
   background: linear-gradient(rgba(255,255,255,0.03) 50%, transparent 50%);
   background-size: 100% 4px;
-  animation: scanline-travel 8s linear infinite;
+  animation: rabble-scanline-travel 8s linear infinite;
   pointer-events: none;
   z-index: 1;
 }
@@ -88,7 +88,7 @@ html, body {
     linear-gradient(rgba(191,95,255,0.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(191,95,255,0.08) 1px, transparent 1px);
   background-size: 50px 50px;
-  animation: grid-advance 20s linear infinite;
+  animation: rabble-grid-advance 20s linear infinite;
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -102,7 +102,7 @@ html, body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   background-size: 300%;
-  animation: holo 6s ease infinite;
+  animation: rabble-holo 6s ease infinite;
   font-family: var(--rabble-font-ui);
   font-weight: 800;
   letter-spacing: 0.22em;
@@ -286,7 +286,7 @@ html, body {
   width: 5px; height: 5px; border-radius: 50%;
   background: var(--rabble-cyan);
   box-shadow: 0 0 6px var(--rabble-cyan);
-  animation: status-pulse 2s ease-in-out infinite;
+  animation: rabble-status-pulse 2s ease-in-out infinite;
   flex-shrink: 0;
 }
 
@@ -444,7 +444,7 @@ html, body {
 .rabble-log-line {
   display: flex; gap: 10px; align-items: baseline;
   opacity: 0;
-  animation: log-in 0.15s ease forwards;
+  animation: rabble-log-in 0.15s ease forwards;
 }
 
 .rabble-log-ts {

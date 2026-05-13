@@ -42,7 +42,7 @@
   to   { opacity: 1; transform: scale(1); }
 }
 
-@keyframes log-in {
+@keyframes rabble-log-in {
   from { opacity: 0; transform: translateY(3px); }
   to   { opacity: 1; transform: translateY(0); }
 }
@@ -51,7 +51,7 @@
    2. AMBIENT / CONTINUOUS
    ═══════════════════════════════════════════════════════════════ */
 
-@keyframes holo {
+@keyframes rabble-holo {
   0%, 100% { background-position: 0%; }
   50%       { background-position: 100%; }
 }
@@ -75,12 +75,12 @@
   100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
 }
 
-@keyframes grid-advance {
+@keyframes rabble-grid-advance {
   0%   { background-position: 0 0; }
   100% { background-position: 50px 50px; }
 }
 
-@keyframes horizon-scroll {
+@keyframes rabble-horizon-scroll {
   0%   { background-position-y: 0; }
   100% { background-position-y: 100px; }
 }
@@ -89,7 +89,7 @@
    3. NEON & GLOW EFFECTS
    ═══════════════════════════════════════════════════════════════ */
 
-@keyframes neon-flicker {
+@keyframes rabble-neon-flicker {
   0%, 100% { opacity: 1; }
   92%       { opacity: 1; }
   93%       { opacity: 0.4; }
@@ -98,32 +98,32 @@
   98%       { opacity: 1; }
 }
 
-@keyframes neon-flicker-hard {
+@keyframes rabble-neon-flicker-hard {
   0%, 89%, 91%, 93%, 100% { opacity: 1; }
   90%, 92%                 { opacity: 0.1; }
 }
 
-@keyframes glow-pulse-magenta {
+@keyframes rabble-glow-pulse-magenta {
   0%, 100% { box-shadow: 0 0 6px var(--rabble-magenta, #ff2d78); }
   50%       { box-shadow: 0 0 24px var(--rabble-magenta, #ff2d78), 0 0 48px rgba(255, 45, 120, 0.3); }
 }
 
-@keyframes glow-pulse-cyan {
+@keyframes rabble-glow-pulse-cyan {
   0%, 100% { box-shadow: 0 0 6px var(--rabble-cyan, #00f5ff); }
   50%       { box-shadow: 0 0 24px var(--rabble-cyan, #00f5ff), 0 0 48px rgba(0, 245, 255, 0.3); }
 }
 
-@keyframes glow-pulse-violet {
+@keyframes rabble-glow-pulse-violet {
   0%, 100% { box-shadow: 0 0 6px var(--rabble-violet, #bf5fff); }
   50%       { box-shadow: 0 0 24px var(--rabble-violet, #bf5fff), 0 0 48px rgba(191, 95, 255, 0.3); }
 }
 
-@keyframes status-pulse {
+@keyframes rabble-status-pulse {
   0%, 100% { opacity: 0.4; transform: scale(0.9); }
   50%       { opacity: 1;   transform: scale(1.15); }
 }
 
-@keyframes logo-pulse {
+@keyframes rabble-logo-pulse {
   0%, 100% {
     transform: scale(1);
     box-shadow: 0 0 30px var(--rabble-magenta, #ff2d78), 0 0 60px var(--rabble-violet, #bf5fff);
@@ -134,12 +134,12 @@
   }
 }
 
-@keyframes border-rotate {
+@keyframes rabble-border-rotate {
   from { --border-angle: 0deg; }
   to   { --border-angle: 360deg; }
 }
 
-@keyframes header-sweep {
+@keyframes rabble-header-sweep {
   0%   { left: -100%; }
   100% { left: 100%; }
 }
@@ -148,12 +148,12 @@
    4. SCREEN / CRT EFFECTS
    ═══════════════════════════════════════════════════════════════ */
 
-@keyframes scanline-travel {
+@keyframes rabble-scanline-travel {
   0%   { transform: translateY(-100%); }
   100% { transform: translateY(100%); }
 }
 
-@keyframes crt-noise {
+@keyframes rabble-crt-noise {
   0%   { transform: translate(0, 0); }
   10%  { transform: translate(-1px, 1px); }
   20%  { transform: translate(1px, -1px); }
@@ -167,7 +167,7 @@
   100% { transform: translate(0, 0); }
 }
 
-@keyframes star-twinkle {
+@keyframes rabble-star-twinkle {
   0%, 100% { opacity: 0.4; }
   50%       { opacity: 1; }
 }
@@ -205,7 +205,7 @@
   80%       { opacity: 0.85; }
 }
 
-@keyframes core-pulse {
+@keyframes rabble-core-pulse {
   0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
   50%       { transform: translate(-50%, -50%) scale(1.5); opacity: 0.5; }
 }
@@ -218,12 +218,12 @@
 .rabble-anim-rise       { animation: rabble-rise       0.4s ease forwards; }
 .rabble-anim-expand     { animation: rabble-expand     0.3s ease forwards; }
 .rabble-anim-float      { animation: rabble-float      3s ease-in-out infinite; }
-.rabble-anim-holo       { animation: holo              6s ease infinite; background-size: 300%; }
-.rabble-anim-flicker    { animation: neon-flicker      4s ease-in-out infinite; }
+.rabble-anim-holo       { animation: rabble-holo              6s ease infinite; background-size: 300%; }
+.rabble-anim-flicker    { animation: rabble-neon-flicker      4s ease-in-out infinite; }
 .rabble-anim-blink      { animation: rabble-blink      1.1s step-end infinite; }
-.rabble-anim-status     { animation: status-pulse      2s ease-in-out infinite; }
-.rabble-anim-glow-m     { animation: glow-pulse-magenta 2.5s ease-in-out infinite; }
-.rabble-anim-glow-c     { animation: glow-pulse-cyan    2.5s ease-in-out infinite; }
-.rabble-anim-glow-v     { animation: glow-pulse-violet  2.5s ease-in-out infinite; }
+.rabble-anim-status     { animation: rabble-status-pulse      2s ease-in-out infinite; }
+.rabble-anim-glow-m     { animation: rabble-glow-pulse-magenta 2.5s ease-in-out infinite; }
+.rabble-anim-glow-c     { animation: rabble-glow-pulse-cyan    2.5s ease-in-out infinite; }
+.rabble-anim-glow-v     { animation: rabble-glow-pulse-violet  2.5s ease-in-out infinite; }
 .rabble-anim-resonance  { animation: rabble-resonance  8s ease-in-out infinite; }
 .rabble-anim-glitch     { animation: rabble-glitch     0.4s steps(1) infinite; }
