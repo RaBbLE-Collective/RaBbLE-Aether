@@ -1,0 +1,52 @@
+# CONTEXT.md — RaBbLE-Aether
+
+```
+epoch: 0 | status: stub
+```
+
+RaBbLE-Aether is the visual design system and canonical asset library for the RaBbLE Collective.
+
+---
+
+## What We Are Building
+
+A single source for all visual tokens, SVG assets, logos, and icons used across the Collective. Members import from Aether rather than maintaining their own copies. The palette lives in Grimoire's `common/RaBbLE-Palette.md`; Aether is where rendered assets (SVGs, icons) live.
+
+## What Good Looks Like
+
+- One import path for any visual asset — no searching across repos
+- Palette variables are the only color interface; no hex values leak into member repos
+- Every asset is named, versioned, and documented in the architecture doc
+- A new member repo can get the full visual identity with one reference
+
+## What to Avoid
+
+- Copying assets into member repos — reference Aether, don't copy
+- Redefining palette values — `../RaBbLE-Grimoire/common/RaBbLE-Palette.md` is the only source
+- Member-specific branding here — Aether is shared Collective identity, not per-member customization
+- Accumulating assets without documentation in the architecture doc
+
+## Structure
+
+| Path | What |
+|---|---|
+| `assets/` | SVGs, logos, icons — canonical visual assets |
+| `../RaBbLE-Grimoire/common/RaBbLE-Palette.md` | Color palette source of truth |
+| `../RaBbLE-Grimoire/RaBbLE-Aether/RaBbLE-Aether-Architecture.md` | Design system spec |
+
+## Active Tracks
+
+| Track | Status |
+|---|---|
+| Repo structure established | Pending |
+| Palette tokens published from Grimoire | Pending |
+| First SVG assets committed | Pending |
+| Member repos updated to reference Aether | Pending (depends on above) |
+
+## Reading Order for a New Session
+
+1. This file — you are here
+2. `AGENT.md` — rules and workspace map
+3. `../RaBbLE-Grimoire/common/RaBbLE-Palette.md` — the palette
+4. `../RaBbLE-Grimoire/RaBbLE-Aether/RaBbLE-Aether-Architecture.md` — design system spec
+5. For Collective context → `../RaBbLE-Grimoire/common/RaBbLE-Collective.md`
