@@ -36,7 +36,17 @@
   --rabble-font-mono: 'Share Tech Mono', 'Space Mono', monospace;
   --rabble-font-ui:   'Exo 2', 'Rajdhani', sans-serif;
 
-  /* ── Glow Radii (for box-shadow / text-shadow) ───────────────── */
+  /* ── Pre-computed glow shadows (use directly in box-shadow / text-shadow) ── */
+  --rabble-glow-magenta-sm:  0 0 6px #ff2d78;
+  --rabble-glow-magenta-md:  0 0 14px #ff2d78;
+  --rabble-glow-magenta-lg:  0 0 28px #ff2d78;
+  --rabble-glow-cyan-sm:     0 0 6px #00f5ff;
+  --rabble-glow-cyan-md:     0 0 14px #00f5ff;
+  --rabble-glow-cyan-lg:     0 0 28px #00f5ff;
+  --rabble-glow-violet-sm:   0 0 6px #bf5fff;
+  --rabble-glow-violet-md:   0 0 14px #bf5fff;
+
+  /* ── Glow offsets (composable: var(--rabble-glow-md) var(--rabble-magenta)) ── */
   --rabble-glow-sm:  0 0 6px;
   --rabble-glow-md:  0 0 14px;
   --rabble-glow-lg:  0 0 28px;
@@ -76,8 +86,15 @@
   --rabble-gradient-scan:    linear-gradient(90deg, var(--rabble-magenta), var(--rabble-cyan));
   --rabble-gradient-holo:    linear-gradient(90deg, var(--rabble-magenta), var(--rabble-cyan), var(--rabble-violet), var(--rabble-magenta));
 
-  /* ── Opacity aliases ─────────────────────────────────────────── */
-  --rabble-alpha-low:  0.06;
-  --rabble-alpha-mid:  0.15;
-  --rabble-alpha-high: 0.35;
+  /* ── Pre-computed alpha variants (rgba — use directly, not with hex vars) ── */
+  --rabble-magenta-10: rgba(255, 45, 120, 0.10);
+  --rabble-magenta-20: rgba(255, 45, 120, 0.20);
+  --rabble-magenta-35: rgba(255, 45, 120, 0.35);
+  --rabble-cyan-10:    rgba(0, 245, 255, 0.10);
+  --rabble-cyan-20:    rgba(0, 245, 255, 0.20);
+  --rabble-cyan-35:    rgba(0, 245, 255, 0.35);
+  --rabble-violet-10:  rgba(191, 95, 255, 0.10);
+  --rabble-violet-20:  rgba(191, 95, 255, 0.20);
+  --rabble-surface-70: rgba(18, 19, 42, 0.70);   /* glass surface */
+  --rabble-surface-85: rgba(10, 0, 16, 0.85);    /* heavy glass / nav */
 }
