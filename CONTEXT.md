@@ -38,10 +38,17 @@ A single source for all visual tokens, SVG assets, logos, and icons used across 
 
 | Track | Status |
 |---|---|
-| Repo structure established | Pending |
-| Palette tokens published from Grimoire | Pending |
-| First SVG assets committed | Pending |
-| Member repos updated to reference Aether | Pending (depends on above) |
+| Repo structure established | **Done** — `assets/{palette,logos,icons,ansi,motion,components}/` |
+| Palette tokens published from Grimoire | **Done** — CSS, JSON, SCSS in `assets/palette/` |
+| Motion / keyframe library | **Done** — `assets/motion/rabble-motion.css` |
+| Unified component library | **Done** — `assets/components/rabble-components.css` |
+| Portal glyph SVG (neon) | **Done** — `assets/logos/rabble-portal-glyphs.svg` |
+| Eye anatomy specification | **Done** — `assets/logos/rabble-portal-glyphs-spec.md` |
+| Claude Design guide | **Done** — `CLAUDE-DESIGN-GUIDE.md` |
+| Xperimental distillation | **Done** — `assets/reference/xperimental-distillation.md` |
+| Eye spec — portal expression system | **Done** — eyebrow opposition mechanic added |
+| Icon assets populated | Pending — icons/, ansi/ stubs exist |
+| Member repos updated to reference Aether | Pending |
 
 ## Reading Order for a New Session
 
