@@ -1,16 +1,22 @@
 /**
- * rabble.css — RaBbLE Design System Entry Point
+ * rabble.css — RaBbLE Design System Entry Point (Aether source)
  *
- * Single import for the complete RaBbLE visual identity.
+ * !! DEVELOPMENT SOURCE — not for direct deployment !!
  *
- * Usage:
- *   HTML:  <link rel="stylesheet" href="path/to/RaBbLE-Aether/rabble.css">
- *   CSS:   @import url('path/to/RaBbLE-Aether/rabble.css');
+ * This file uses CSS @import with relative paths. It only works when served
+ * over HTTP with the assets/ directory adjacent (e.g. a local dev server
+ * pointed at the Aether root, or the Aether root itself).
  *
- * Loads (in order):
+ * For deployment, run: bash RaBbLE-Grimoire/spells/cast-aether.sh
+ * The spell generates a self-contained bundle at RaBbLE-World/aether/rabble.css
+ * with all CSS inlined — no relative imports, works everywhere.
+ *
+ * Deployed bundle: https://joinrabble.world/aether/rabble.css
+ *
+ * Import order:
  *   1. Google Fonts — Exo 2, Share Tech Mono
- *   2. rabble-palette.css — all design tokens (colors, spacing, type, gradients)
- *   3. rabble-motion.css  — all @keyframes and animation utility classes
+ *   2. rabble-palette.css — design tokens (colors, spacing, type, gradients)
+ *   3. rabble-motion.css  — @keyframes and animation utility classes
  *   4. rabble-components.css — UI components (requires palette + motion)
  */
 
