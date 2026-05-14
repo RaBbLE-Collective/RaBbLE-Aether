@@ -35,6 +35,7 @@
   /* ── Typography ──────────────────────────────────────────────── */
   --rabble-font-mono: 'Share Tech Mono', 'Space Mono', monospace;
   --rabble-font-ui:   'Exo 2', 'Rajdhani', sans-serif;
+  --rabble-font-hero: 'Orbitron', 'Exo 2', sans-serif; /* OS lockups, wordmark, brand crawls */
 
   /* ── Pre-computed glow shadows (use directly in box-shadow / text-shadow) ── */
   --rabble-glow-magenta-sm:  0 0 6px #ff2d78;
