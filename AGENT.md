@@ -16,14 +16,11 @@ RaBbLE-Aether is the visual design system and asset library for the Collective. 
 | `../RaBbLE-Grimoire/common/RaBbLE-Palette.md` | Canonical color palette — source of truth |
 | `../RaBbLE-Grimoire/RaBbLE-Aether/RaBbLE-Aether-Architecture.md` | Design system spec |
 
-## Pulse Protocol — Commits
+## Commits & Branches
 
-```
-[impulse] ~ [organ] >> [revelation] // %SYSTEM_STATE%
-```
-`spark` new · `harmonize` cleanup · `mend` fix · `transcribe` docs · `ingest` deps · `evolve` epoch
-Full spec: `../RaBbLE-Grimoire/common/RaBbLE-CommitStyle.md`
-**Branch rule:** Work on a named branch. Commit per session. `main` only receives complete, tagged episodes.
+See Grimoire: `../RaBbLE-Grimoire/common/RaBbLE-CommitStyle.md` (Pulse Protocol)
+
+**TL;DR:** `[impulse] ~ [organ] >> [revelation] // %STATE%` — `spark` new · `harmonize` cleanup · `mend` fix · `transcribe` docs · `ingest` deps · `evolve` epoch
 
 ## Rules
 
