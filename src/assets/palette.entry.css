@@ -1,0 +1,11 @@
+/* palette.entry.css — Aether design system bundle entry point
+
+   This file is what esbuild bundles. It imports all Aether components
+   in dependency order: palette → motion → components.
+
+   Output: dist/aether.min.css (minified) or dist/aether.css (dev with sourcemap)
+*/
+
+@import './palette/rabble-palette.css';
+@import './motion/rabble-motion.css';
+@import './components/rabble-components.css';
