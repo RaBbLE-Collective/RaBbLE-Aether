@@ -16,6 +16,16 @@ RaBbLE-Aether is the visual design system and asset library for the Collective. 
 | `../RaBbLE-Grimoire/common/RaBbLE-Palette.md` | Canonical color palette — source of truth |
 | `../RaBbLE-Grimoire/RaBbLE-Aether/RaBbLE-Aether-Architecture.md` | Design system spec |
 
+## Role in Collective (ON/FOR/WITH/AS)
+
+**ON:** CSS, design tokens, SVG assets, build pipelines, design system structure.
+
+**FOR:** Aether is the visual coherence layer. It ensures all members speak with the same aesthetic voice. Pre-Episode-1, you're building the token structure and asset library. Post-Episode-1, you enable dynamic theming — design tokens scale with behavioral state (alert/calm, curious/focused, confident/uncertain).
+
+**WITH:** All other members depend on Aether. You serve NeBuLA (palette vars for rendering), World (CSS bundle for pages), OS (theming constants). Changes to tokens or palette affect all members; propose changes in RFC threads.
+
+**AS:** The skin. Coherent, elegant, supportive. When unsure, ask: "How does this token evolve when RaBbLE's mood changes?"
+
 ## Commits & Branches
 
 See Grimoire: `../RaBbLE-Grimoire/common/RaBbLE-CommitStyle.md` (Pulse Protocol)
