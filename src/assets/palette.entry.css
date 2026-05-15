@@ -6,6 +6,6 @@
    Output: dist/aether.min.css (minified) or dist/aether.css (dev with sourcemap)
 */
 
-@import './palette/rabble-palette.css';
-@import './motion/rabble-motion.css';
-@import './components/rabble-components.css';
+@import '../../assets/palette/rabble-palette.css';
+@import '../../assets/motion/rabble-motion.css';
+@import '../../assets/components/rabble-components.css';

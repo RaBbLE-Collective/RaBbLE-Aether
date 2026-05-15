@@ -243,6 +243,12 @@
   50%       { filter: drop-shadow(0 0 12px rgba(255, 45, 120, 0.55)); }
 }
 
+/* Harmony flow — cyan chases magenta across a flowing gradient */
+@keyframes harmony-flow {
+  0%, 100% { background-position: 0%; }
+  50% { background-position: 100%; }
+}
+
 @keyframes page-fade-out {
   from { opacity: 1; transform: translateY(0); }
   to   { opacity: 0; transform: translateY(-8px); }
@@ -264,3 +270,85 @@
 }
 .rabble-anim-brand-flow.slow { animation-duration: 11s, 11s; }
 .rabble-anim-brand-flow.fast { animation-duration: 4.5s, 4.5s; }
+
+/* Animated angle property for conic-gradient spin — no element rotation,
+   only the gradient origin angle moves, so the mask ring stays rectangular. */
+@property --harmony-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes harmony-spin {
+  from { --harmony-angle: 0deg; }
+  to   { --harmony-angle: 360deg; }
+}
+
+/* Continuous unidirectional scroll for the line bar */
+@keyframes harmony-scroll {
+  from { background-position: 0% center; }
+  to   { background-position: 100% center; }
+}
+
+/* Glow cycles through the same color order as the spin, linear so it loops cleanly */
+@keyframes harmony-glow {
+  0%   { box-shadow: 0 0 12px rgba(0, 245, 255, 0.35), inset 0 0 12px rgba(0, 245, 255, 0.08); }
+  33%  { box-shadow: 0 0 12px rgba(191, 95, 255, 0.35), inset 0 0 12px rgba(191, 95, 255, 0.08); }
+  66%  { box-shadow: 0 0 12px rgba(255, 45, 120, 0.35), inset 0 0 12px rgba(255, 45, 120, 0.08); }
+  100% { box-shadow: 0 0 12px rgba(0, 245, 255, 0.35), inset 0 0 12px rgba(0, 245, 255, 0.08); }
+}
+
+/* Harmony line — 1px scrolling accent, colors always full-spectrum, no fade to void */
+.rabble-harmony-line {
+  position: relative;
+  overflow: hidden;
+}
+.rabble-harmony-line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background-image: linear-gradient(90deg,
+    var(--rabble-cyan, #00f5ff),
+    var(--rabble-violet, #bf5fff),
+    var(--rabble-magenta, #ff2d78),
+    var(--rabble-cyan, #00f5ff));
+  background-size: 200% 100%;
+  animation: harmony-scroll 9s linear infinite;
+  opacity: 0.9;
+}
+.rabble-harmony-line.slow::after { animation-duration: 12s; }
+.rabble-harmony-line.fast::after { animation-duration: 6s; }
+
+/* Border harmony — spinning conic-gradient ring, mask clips to border only.
+   Uses @property so only the gradient angle animates — the mask ring stays
+   rectangular and the element background is never affected. */
+.rabble-border-harmony {
+  position: relative;
+  animation: harmony-glow 9s linear infinite;
+}
+.rabble-border-harmony::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--harmony-angle),
+    var(--rabble-cyan, #00f5ff),
+    var(--rabble-violet, #bf5fff),
+    var(--rabble-magenta, #ff2d78),
+    var(--rabble-cyan, #00f5ff));
+  animation: harmony-spin 9s linear infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+.rabble-border-harmony.slow { animation-duration: 12s; }
+.rabble-border-harmony.slow::before { animation-duration: 12s; }
+.rabble-border-harmony.fast { animation-duration: 6s; }
+.rabble-border-harmony.fast::before { animation-duration: 6s; }
