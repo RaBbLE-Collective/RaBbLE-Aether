@@ -1,79 +1,78 @@
 # CONTEXT.md — RaBbLE-Aether
 
 ```
-epoch: 0 | evolution: 0 | echo: 0 | status: scaffold → build system
-version: v0.0.0 (pre-Episode-1)
+epoch: 0 | evolution: 0 | echo: 0 | status: active — build system live
+version: v0.0.0.0 (pre-Episode-1)
+last session: 2026-05-15 (Session 9)
 ```
 
-RaBbLE-Aether is the visual design system and canonical asset library for the RaBbLE Collective. Ships as a CDN-distributed CSS bundle alongside NeBuLA.
+RaBbLE-Aether is the visual design system and canonical asset library for the RaBbLE Collective. Ships as a CDN-distributed CSS bundle. All member repos consume it — no local copies.
 
 ---
 
 ## What We Are Building
 
-A single source for all visual tokens, SVG assets, logos, and icons used across the Collective. Members import from Aether rather than maintaining their own copies. The palette lives in Grimoire's `common/RaBbLE-Palette.md`; Aether is where rendered assets (SVGs, icons) live.
+A single source for all visual tokens, animations, component classes, and SVG assets used across the Collective. Members load one CSS file from CDN and get the full visual identity. Palette source of truth lives in Grimoire.
 
 ## What Good Looks Like
 
-- One import path for any visual asset — no searching across repos
-- Palette variables are the only color interface; no hex values leak into member repos
-- Every asset is named, versioned, and documented in the architecture doc
-- A new member repo can get the full visual identity with one reference
+- One CDN import gives any page the complete visual system
+- Palette variables are the only color interface — no hex values leak into member repos
+- Component classes cover all UI needs — members never duplicate visual rules
+- `dev-serve.sh` keeps `aether.css` in sync during development
 
 ## What to Avoid
 
-- Copying assets into member repos — reference Aether, don't copy
-- Redefining palette values — `../RaBbLE-Grimoire/common/RaBbLE-Palette.md` is the only source
-- Member-specific branding here — Aether is shared Collective identity, not per-member customization
-- Accumulating assets without documentation in the architecture doc
+- Hex values in component rules — always use `--rabble-*` vars with fallbacks
+- Member-specific styles — Aether is Collective-wide identity
+- Editing `dist/` files directly — always edit source, then rebuild
+- Running builds outside the dev-serve.sh workflow (causes port conflicts)
 
 ## Structure
 
 | Path | What |
 |---|---|
-| `assets/` | SVGs, logos, icons — canonical visual assets |
-| `../RaBbLE-Grimoire/common/RaBbLE-Palette.md` | Color palette source of truth |
-| `../RaBbLE-Grimoire/RaBbLE-Aether/RaBbLE-Aether-Architecture.md` | Design system spec |
+| `src/assets/palette.entry.css` | esbuild entry point — imports palette → motion → components |
+| `assets/palette/rabble-palette.css` | All `--rabble-*` design tokens |
+| `assets/motion/rabble-motion.css` | `@keyframes`, `@property`, animation utility classes |
+| `assets/components/rabble-components.css` | Full component library (buttons, cards, applet tiles, etc.) |
+| `dist/aether.css` | Dev build (built by `build:watch` — what HTML pages link to) |
+| `dist/aether.min.css` | Production build (built by `npm run build` — CDN deploy only) |
+| `assets/logos/` | SVG assets |
 
-## Active Tracks (Episode 1 — build + CDN)
+## Build Scripts
+
+```bash
+bash RaBbLE-Grimoire/spells/dev-serve.sh   # ← always use this for dev
+npm run build:dev                           # one-shot dev build → dist/aether.css
+npm run build                              # production build → dist/aether.min.css
+```
+
+**Dev file is `aether.css`. Production file is `aether.min.css`. HTML pages must link to `aether.css` in dev.**
+
+## Active Tracks
 
 | Track | Status |
 |---|---|
-| Architecture & design spec | **Done** — `RaBbLE-Aether-Architecture.md` in Grimoire |
-| Build system & CDN spec | **Done** — `RaBbLE-Aether-Build-CDN.md` documented |
-| Repo structure established | **Done** — `assets/{palette,logos,icons,ansi,motion,components}/` |
-| Palette tokens published from Grimoire | **Done** — CSS, JSON, SCSS in `assets/palette/` |
+| Palette tokens | **Done** — `assets/palette/rabble-palette.css` |
 | Motion / keyframe library | **Done** — `assets/motion/rabble-motion.css` |
-| Unified component library | **Done** — `assets/components/rabble-components.css` |
-| Portal glyph SVG (neon) | **Done** — `assets/logos/rabble-portal-glyphs.svg` |
-| Eye anatomy specification | **Done** — `assets/logos/rabble-portal-glyphs-spec.md` |
-| Claude Design guide | **Done** — `CLAUDE-DESIGN-GUIDE.md` |
-| **[Episode 1] esbuild + npm scripts** | **In Progress** — adding build system to package.json |
-| **[Episode 1] dist/ output & CDN ready** | **Pending** — `npm run build` → `dist/aether.min.css` |
-| **[Episode 1] Five-Es versioning** | **Ready** — v0.0.0 locked, tagged for CDN paths |
+| Component library | **Done** — `assets/components/rabble-components.css` · includes `.floor`, `.horizon`, all CRT overlays |
+| esbuild build system | **Done** — `npm run build`, `build:dev`, `build:watch` |
+| CDN delivery via dev-serve.sh | **Done** — all World pages loading from `/aether/v0.0.0.0/aether.css` |
+| Portal glyph SVG | **Done** — `assets/logos/rabble-portal-glyphs.svg` |
+| Production deploy to Cloudflare R2 | **Pending** — `joinrabble.world` still on pre-refactor code |
+| Cache-busting strategy for version bumps | **Pending** |
+| `prefers-reduced-motion` on harmony animations | **Pending** |
 | Icon assets populated | Future |
-| Member repos updated to reference Aether CDN | After Episode 1 air |
+
+## Known Behaviours
+
+**`@property --harmony-angle` Firefox DevTools warning:** Firefox shows "Selector expected. Ruleset ignored due to bad selector." for `@property` at-rules in the Style Inspector. This is a DevTools cosmetic issue — the property IS registered and animations work. A `--harmony-angle: 0deg` fallback is also declared in the WM `:root` block for browsers that reject `@property`.
 
 ## Reading Order for a New Session
 
 1. This file — you are here
 2. `AGENT.md` — rules and workspace map
-3. `../RaBbLE-Grimoire/RaBbLE-Aether/RaBbLE-Aether-Architecture.md` — design system spec
-4. `../RaBbLE-Grimoire/RaBbLE-Aether/RaBbLE-Aether-Build-CDN.md` — build system + CDN usage
-5. `../RaBbLE-Grimoire/common/RaBbLE-Palette.md` — the palette (canonical source)
-6. For Collective context → `../RaBbLE-Grimoire/common/RaBbLE-Collective.md`
-
-## Build & Distribution
-
-**Build system:** esbuild (CSS bundler)  
-**Output:** `dist/aether.min.css` + sourcemap  
-**CDN versioning:** Five-Es (`v0.0.0` pre-Episode-1, `v0.0.0.1` after air)  
-**See:** `../RaBbLE-Grimoire/RaBbLE-Aether/RaBbLE-Aether-Build-CDN.md`
-
-## Scripts
-
-```bash
-npm run build         # Minified production build
-npm run build:dev    # With sourcemaps, unminified
-npm run build:watch  # Watch mode for development
-```
+3. `../RaBbLE-Grimoire/RaBbLE-Aether/RaBbLE-Aether-Build-CDN.md` — build system, dev/prod file distinction, CDN usage
+4. `../RaBbLE-Grimoire/RaBbLE-Aether/RaBbLE-Aether-Architecture.md` — design system spec
+5. `../RaBbLE-Grimoire/common/RaBbLE-Palette.md` — palette (canonical source)
