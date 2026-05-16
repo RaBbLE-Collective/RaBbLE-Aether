@@ -80,6 +80,11 @@
   100% { background-position: 50px 50px; }
 }
 
+@keyframes floor-drift {
+  from { background-position: 0 0; }
+  to   { background-position: 0 50px; }
+}
+
 @keyframes rabble-horizon-scroll {
   0%   { background-position-y: 0; }
   100% { background-position-y: 100px; }

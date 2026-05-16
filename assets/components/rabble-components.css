@@ -148,6 +148,35 @@ hr {
   mix-blend-mode: screen;
 }
 
+/* Outrun perspective grid floor — sits behind all content */
+.rabble-floor,
+.floor {
+  position: fixed; left: -10%; right: -10%; bottom: -10%; top: 60%;
+  pointer-events: none; z-index: 0; perspective: 600px; overflow: hidden;
+}
+.rabble-floor::before,
+.floor::before {
+  content: "";
+  position: absolute; left: -50%; right: -50%; top: 0; bottom: -20%;
+  background-image:
+    linear-gradient(rgba(255,121,198,0.32) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,121,198,0.24) 1px, transparent 1px);
+  background-size: 70px 50px;
+  transform: rotateX(62deg); transform-origin: top center;
+  animation: floor-drift 18s linear infinite;
+  filter: drop-shadow(0 0 8px rgba(255,121,198,0.65));
+  mask-image: radial-gradient(ellipse at 50% 0%, black 35%, transparent 80%);
+}
+
+/* Neon horizon line — 1px glow at the vanishing point */
+.rabble-horizon,
+.horizon {
+  position: fixed; left: 0; right: 0; top: 60%; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--rabble-magenta, #ff2d78), transparent);
+  box-shadow: 0 0 14px var(--rabble-magenta, #ff2d78), 0 0 28px rgba(255,45,120,0.4);
+  z-index: 1; pointer-events: none;
+}
+
 /* Full CRT scanline sweep — heavier, animated */
 .rabble-crt-sweep::after {
   content: '';
@@ -199,10 +228,11 @@ hr {
 }
 
 .rabble-tagline {
-  font-family: var(--rabble-font-mono);
+  font-family: var(--rabble-font-hero);
+  font-weight: 500;
   font-size: 10.5px;
   color: var(--rabble-violet);
-  letter-spacing: 0.2em;
+  letter-spacing: var(--rabble-tracking-display, 0.2em);
   opacity: 0.78;
   text-transform: uppercase;
 }
@@ -810,6 +840,7 @@ hr {
   --wm-chase-dur:     8s;
   --wm-active-dur:    3s;
   --wm-ring-opacity:  0.28;
+  --harmony-angle:    0deg; /* fallback if @property registration fails */
 }
 
 .applet {
