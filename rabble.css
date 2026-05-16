@@ -20,8 +20,8 @@
  *   4. rabble-components.css — UI components (requires palette + motion)
  */
 
-/* ── 1. Fonts ─────────────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Share+Tech+Mono&display=swap');
+/* ── 1. Fonts — Aether owns all RaBbLE typefaces ─────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Exo+2:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Share+Tech+Mono&display=swap');
 
 /* ── 2. Palette tokens ───────────────────────────────────────── */
 @import url('assets/palette/rabble-palette.css');

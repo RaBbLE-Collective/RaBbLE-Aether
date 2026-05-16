@@ -717,9 +717,14 @@ hr {
    13. BRAND FLOW
    ═══════════════════════════════════════════════════════════════ */
 
-/* Animated cyan ↔ magenta gradient — use on the RaBbLE wordmark and hero text */
+/* Animated cyan ↔ magenta gradient — use on the RaBbLE wordmark and hero text.
+   text-transform: none + letter-spacing: 0 + font-weight: 900 are explicit brand constants —
+   "RaBbLE" is a brand artifact: never all-caps, never stretched, always heavy Orbitron. */
 .rabble-brand-flow {
   font-family: var(--rabble-font-hero);
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: none;
   background-image: linear-gradient(
     90deg,
     var(--rabble-cyan)    0%,
