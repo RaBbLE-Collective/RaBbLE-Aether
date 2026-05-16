@@ -1,33 +1,14 @@
 /**
- * rabble.css — RaBbLE Design System Entry Point (Aether source)
+ * rabble.css — Local dev-server entry (DO NOT deploy)
  *
- * !! DEVELOPMENT SOURCE — not for direct deployment !!
- *
- * This file uses CSS @import with relative paths. It only works when served
- * over HTTP with the assets/ directory adjacent (e.g. a local dev server
- * pointed at the Aether root, or the Aether root itself).
- *
- * For deployment, run: bash RaBbLE-Grimoire/spells/cast-aether.sh
- * The spell generates a self-contained bundle at RaBbLE-World/aether/rabble.css
- * with all CSS inlined — no relative imports, works everywhere.
- *
- * Deployed bundle: https://joinrabble.world/aether/rabble.css
- *
- * Import order:
- *   1. Google Fonts — Exo 2, Share Tech Mono
- *   2. rabble-palette.css — design tokens (colors, spacing, type, gradients)
- *   3. rabble-motion.css  — @keyframes and animation utility classes
- *   4. rabble-components.css — UI components (requires palette + motion)
+ * Use only with a local HTTP server pointed at the Aether root.
+ * The real build entry is src/entry.css → dist/aether.min.css via:
+ *   npm run build      (prod)
+ *   npm run build:dev  (dev + sourcemap)
+ *   npm run cast       (build + copy to World)
  */
 
-/* ── 1. Fonts — Aether owns all RaBbLE typefaces ─────────────── */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Exo+2:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Share+Tech+Mono&display=swap');
-
-/* ── 2. Palette tokens ───────────────────────────────────────── */
 @import url('assets/palette/rabble-palette.css');
-
-/* ── 3. Motion / keyframes ───────────────────────────────────── */
 @import url('assets/motion/rabble-motion.css');
-
-/* ── 4. Components ───────────────────────────────────────────── */
 @import url('assets/components/rabble-components.css');

@@ -533,14 +533,14 @@ hr {
 .rabble-nav-links a:hover { color: var(--rabble-cyan); }
 .rabble-nav-links a.active { color: var(--rabble-magenta); }
 
-/* ── Shell — full-viewport column layout ──────────────────────── */
+/* ── Shell — full-viewport layout container ──────────────────── */
 .shell {
   position: relative;
   z-index: 5;
   height: 100svh; height: 100dvh;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto 1fr;
   padding-left:  env(safe-area-inset-left,  0px);
   padding-right: env(safe-area-inset-right, 0px);
 }

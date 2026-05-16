@@ -1255,8 +1255,8 @@ hr {
   height: 100svh;
   height: 100dvh;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto 1fr;
   padding-left: env(safe-area-inset-left, 0px);
   padding-right: env(safe-area-inset-right, 0px);
 }
@@ -1678,5 +1678,5 @@ hr {
   }
 }
 
-/* src/assets/palette.entry.css */
+/* src/entry.css */
 /*# sourceMappingURL=aether.css.map */
