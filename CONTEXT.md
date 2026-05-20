@@ -39,6 +39,8 @@ A single source for all visual tokens, animations, component classes, and SVG as
 | `dist/aether.css` | Dev build (built by `build:watch` — what HTML pages link to) |
 | `dist/aether.min.css` | Production build (built by `npm run build` — CDN deploy only) |
 | `assets/logos/` | SVG assets |
+| `assets/entity/` | Entity visual reference images (doc-compare, reference) |
+| `RaBbLE-Entity-Visual-Spec.md` | Canonical entity visual identity spec |
 
 ## Build Scripts
 
@@ -63,6 +65,7 @@ npm run build                              # production build → dist/aether.mi
 | Production deploy to Cloudflare R2 | **Pending** — `joinrabble.world` still on pre-refactor code |
 | Cache-busting strategy for version bumps | **Pending** |
 | `prefers-reduced-motion` on harmony animations | **Pending** |
+| Entity visual spec + reference images | **Done** — `RaBbLE-Entity-Visual-Spec.md`, `assets/entity/` |
 | Icon assets populated | Future |
 
 ## Known Behaviours
