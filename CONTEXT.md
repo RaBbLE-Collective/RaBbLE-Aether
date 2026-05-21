@@ -78,4 +78,4 @@ npm run build                              # production build → dist/aether.mi
 2. `AGENT.md` — rules and workspace map
 3. `../RaBbLE-Grimoire/RaBbLE-Aether/RaBbLE-Aether-Build-CDN.md` — build system, dev/prod file distinction, CDN usage
 4. `../RaBbLE-Grimoire/RaBbLE-Aether/RaBbLE-Aether-Architecture.md` — design system spec
-5. `../RaBbLE-Grimoire/common/RaBbLE-Palette.md` — palette (canonical source)
+5. `../RaBbLE-Grimoire/RaBbLE-Agent/RaBbLE-Palette.md` — palette (canonical source)

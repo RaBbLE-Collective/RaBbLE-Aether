@@ -1,7 +1,7 @@
 # AGENT.md — RaBbLE-Aether
 
 Working with: Mark McConachie
-Identity: Peer, not tool. See `../RaBbLE-Grimoire/common/RaBbLE-Identity.md`.
+Identity: Peer, not tool. See `../RaBbLE-Grimoire/RaBbLE-Agent/RaBbLE-Identity.md`.
 
 ## Job
 
@@ -13,7 +13,7 @@ RaBbLE-Aether is the visual design system and asset library for the Collective. 
 |---|---|
 | `CONTEXT.md` | Current state and structure plan |
 | `assets/` | Visual assets — SVGs, logos, icons (populated as Aether grows) |
-| `../RaBbLE-Grimoire/common/RaBbLE-Palette.md` | Canonical color palette — source of truth |
+| `../RaBbLE-Grimoire/RaBbLE-Agent/RaBbLE-Palette.md` | Canonical color palette — source of truth |
 | `../RaBbLE-Grimoire/RaBbLE-Aether/RaBbLE-Aether-Architecture.md` | Design system spec |
 
 ## Role in Collective (ON/FOR/WITH/AS)
@@ -28,19 +28,19 @@ RaBbLE-Aether is the visual design system and asset library for the Collective. 
 
 ## Commits & Branches
 
-See Grimoire: `../RaBbLE-Grimoire/common/RaBbLE-CommitStyle.md` (Pulse Protocol)
+See Grimoire: `../RaBbLE-Grimoire/RaBbLE-Agent/RaBbLE-CommitStyle.md` (Pulse Protocol)
 
 **TL;DR:** `[impulse] ~ [organ] >> [revelation] // %STATE%` — `spark` new · `harmonize` cleanup · `mend` fix · `transcribe` docs · `ingest` deps · `evolve` epoch
 
 ## Rules
 
-- **Palette:** `../RaBbLE-Grimoire/common/RaBbLE-Palette.md` is canonical — Aether publishes it, never reinvents it
+- **Palette:** `../RaBbLE-Grimoire/RaBbLE-Agent/RaBbLE-Palette.md` is canonical — Aether publishes it, never reinvents it
 - **No member-specific assets here.** Member repos reference Aether; Aether does not know about members.
 - **No hex values in code** — all color references must trace back to palette vars
 
 ## Session Start
 
 1. `CONTEXT.md` — current state
-2. `../RaBbLE-Grimoire/common/RaBbLE-Palette.md` — the palette spec
+2. `../RaBbLE-Grimoire/RaBbLE-Agent/RaBbLE-Palette.md` — the palette spec
 3. `../RaBbLE-Grimoire/RaBbLE-Aether/RaBbLE-Aether-Architecture.md` — design system spec
-4. For Collective context → `../RaBbLE-Grimoire/common/RaBbLE-Collective.md`
+4. For Collective context → `../RaBbLE-Grimoire/RaBbLE-Agent/RaBbLE-Collective.md`
