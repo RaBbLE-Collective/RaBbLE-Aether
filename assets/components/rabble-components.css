@@ -739,6 +739,9 @@ hr {
           background-clip: text;
   -webkit-text-fill-color: transparent;
           color: transparent;
+  /* GPU layer promotion — isolates repaints to this element's backing store only */
+  will-change: transform;
+  transform: translateZ(0);
   animation:
     brand-harmony 7s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite,
     brand-glow    7s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;

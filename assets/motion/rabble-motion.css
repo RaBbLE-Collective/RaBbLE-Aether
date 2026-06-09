@@ -244,8 +244,8 @@
 }
 
 @keyframes brand-glow {
-  0%, 100% { filter: drop-shadow(0 0 12px rgba(0, 245, 255, 0.55)); }
-  50%       { filter: drop-shadow(0 0 12px rgba(255, 45, 120, 0.55)); }
+  0%, 100% { text-shadow: 0 0 14px rgba(0, 245, 255, 0.5), 0 0 28px rgba(0, 245, 255, 0.2); }
+  50%       { text-shadow: 0 0 14px rgba(255, 45, 120, 0.5), 0 0 28px rgba(255, 45, 120, 0.2); }
 }
 
 /* Harmony flow — cyan chases magenta across a flowing gradient */
