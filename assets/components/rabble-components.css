@@ -733,21 +733,23 @@ hr {
     var(--rabble-violet) 70%,
     var(--rabble-cyan)   100%
   );
-  background-size: 220% 100%;
-  background-position: 0% 50%;
+  background-size: 200% 100%;
+  /* Static gradient position — brand-harmony animated background-position on
+     background-clip:text, which forces Skia to re-rasterize every frame.
+     background-position is not GPU-compositable. Static position + text-shadow
+     animation (brand-glow) gives the same animated color feel at zero CPU cost. */
+  background-position: 30% 50%;
   -webkit-background-clip: text;
           background-clip: text;
   -webkit-text-fill-color: transparent;
           color: transparent;
-  /* GPU layer promotion — isolates repaints to this element's backing store only */
+  /* GPU layer promotion — isolates the text-shadow animation to compositor */
   will-change: transform;
   transform: translateZ(0);
-  animation:
-    brand-harmony 7s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite,
-    brand-glow    7s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  animation: brand-glow 7s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
-.rabble-brand-flow.slow { animation-duration: 11s, 11s; }
-.rabble-brand-flow.fast { animation-duration: 4.5s, 4.5s; }
+.rabble-brand-flow.slow { animation-duration: 11s; }
+.rabble-brand-flow.fast { animation-duration: 4.5s; }
 
 /* ═══════════════════════════════════════════════════════════════
    14. TYPOGRAPHY UTILITIES
