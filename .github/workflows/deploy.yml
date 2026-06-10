@@ -34,10 +34,10 @@ jobs:
           # Upload all built files
           for file in dist/*; do
             filename=$(basename "$file")
-            wrangler r2 object upload \
-              --bucket=rabble-cdn-prod \
-              "$file" \
-              "aether/${{ steps.tag.outputs.version }}/$filename"
+            wrangler r2 object put \
+              "rabble-cdn-prod/aether/${{ steps.tag.outputs.version }}/$filename" \
+              --file="$file" \
+              --remote
           done
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
