@@ -67,6 +67,7 @@ npm run build                              # production build → dist/aether.mi
 | `prefers-reduced-motion` on harmony animations | **Pending** |
 | Entity visual spec + reference images | **Done** — `RaBbLE-Entity-Visual-Spec.md`, `assets/entity/` |
 | Icon assets populated | Future |
+| OS theme substrate (`themes/`) | **Done** — GTK3 synthwave skeleton, GTK4 overrides, Kvantum SVG, Firefox chrome CSS. Ansible in RaBbLE-OS wired to `aether_repo_root`. |
 
 ## Known Behaviours
 

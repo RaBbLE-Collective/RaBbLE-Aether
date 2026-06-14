@@ -1,0 +1,486 @@
+/* RaBbLE-Aether GTK3 — synthwave skeleton
+ * spark ~ visual-substrate >> aether-gtk3 born // %THEME_BORN%
+ *
+ * Canonical source: RaBbLE-Aether/themes/gtk3/aether-gtk3.css
+ * Deployed by Ansible to:
+ *   ~/.local/share/themes/RaBbLE-Aether/gtk-3.0/gtk.css
+ *
+ * Pure Aether vocabulary — void backgrounds, neon borders, flat surfaces.
+ * No Materia. No Arc. No Material Design ripples or elevation cards.
+ * Palette: RaBbLE-Grimoire/common/RaBbLE-Palette.md — never invent hex values.
+ *
+ * GTK3 user stylesheet (RaBbLE-OS/config/gtk-3.0/gtk.css) loads on top
+ * as the per-app Aether personality layer.
+ */
+
+/* ── Palette tokens ─────────────────────────────────────────────── */
+@define-color bg         #0a0010;
+@define-color surface    #12132a;
+@define-color raised     #1a1b2e;
+@define-color border_dim #2a2840;
+@define-color text       #e8e6f0;
+@define-color muted      #6b6880;
+@define-color magenta    #ff2d78;
+@define-color cyan       #00f5ff;
+@define-color violet     #bf5fff;
+@define-color pink       #ff79c6;
+@define-color green      #50fa7b;
+@define-color yellow     #f1fa8c;
+@define-color red        #e05c6f;
+@define-color magenta_dim rgba(255,45,120,0.12);
+@define-color magenta_mid rgba(255,45,120,0.20);
+@define-color cyan_dim    rgba(0,245,255,0.15);
+@define-color violet_dim  rgba(191,95,255,0.12);
+@define-color focus_ring  rgba(0,245,255,0.20);
+
+/* ── Global ──────────────────────────────────────────────────────── */
+* {
+  -GtkScrollbar-has-backward-stepper:           false;
+  -GtkScrollbar-has-forward-stepper:            false;
+  -GtkScrollbar-has-secondary-backward-stepper: false;
+  -GtkScrollbar-has-secondary-forward-stepper:  false;
+  -gtk-outline-radius: 4px;
+  outline-color: alpha(@cyan, 0.55);
+  outline-width: 1px;
+}
+
+/* ── Window / application ──────────────────────────────────────── */
+window,
+.background {
+  background-color: @bg;
+  color: @text;
+}
+
+/* ── Header bar ─────────────────────────────────────────────────── */
+headerbar {
+  background-color: @surface;
+  color: @text;
+  border-bottom: 1px solid @border_dim;
+  padding: 4px 8px;
+  min-height: 40px;
+}
+
+headerbar .title   { font-weight: bold; color: @text; }
+headerbar .subtitle { color: @muted; font-size: smaller; }
+
+headerbar separator {
+  background-color: @border_dim;
+  min-width: 1px;
+  margin: 6px 2px;
+}
+
+headerbar button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: @muted;
+  border-radius: 4px;
+  padding: 4px 8px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+headerbar button:hover {
+  background-color: @magenta_dim;
+  border-color: alpha(@magenta, 0.35);
+  color: @text;
+}
+
+headerbar button:active {
+  background-color: @magenta_mid;
+  border-color: @magenta;
+  color: @magenta;
+}
+
+headerbar button.titlebutton {
+  padding: 2px;
+  border-radius: 50%;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+headerbar button.titlebutton.close {
+  background-color: @magenta;
+  color: @bg;
+}
+
+headerbar button.titlebutton.close:hover {
+  background-color: alpha(@magenta, 0.80);
+  box-shadow: 0 0 8px alpha(@magenta, 0.50);
+}
+
+headerbar button.titlebutton.minimize,
+headerbar button.titlebutton.maximize {
+  background-color: @border_dim;
+  color: @muted;
+}
+
+headerbar button.titlebutton.minimize:hover,
+headerbar button.titlebutton.maximize:hover {
+  background-color: @violet_dim;
+  border-color: @violet;
+  color: @text;
+}
+
+.titlebar {
+  background-color: @surface;
+  color: @text;
+  border-bottom: 1px solid @border_dim;
+}
+
+/* ── Base view ───────────────────────────────────────────────────── */
+.view,
+.view row,
+iconview,
+treeview,
+textview {
+  background-color: @bg;
+  color: @text;
+}
+
+.view row:hover,
+iconview:hover            { background-color: @violet_dim; }
+
+.view row:selected,
+.view:selected,
+iconview:selected,
+iconview.cell:selected,
+treeview:selected,
+treeview row:selected     { background-color: @cyan_dim; color: @text; }
+
+.view row:selected:focus,
+treeview row:selected:focus { color: @cyan; }
+
+.view row:nth-child(even) { background-color: alpha(@surface, 0.35); }
+
+selection { background-color: rgba(0,245,255,0.24); color: @text; }
+
+/* ── Buttons ─────────────────────────────────────────────────────── */
+button {
+  background-color: @raised;
+  color: @text;
+  border: 1px solid @border_dim;
+  border-radius: 4px;
+  padding: 5px 12px;
+  transition: background-color 150ms, border-color 150ms, box-shadow 150ms;
+}
+
+button:hover    { background-color: @magenta_dim; border-color: @magenta; }
+button:active   { background-color: @magenta_mid; border-color: @magenta; color: @magenta; }
+button:disabled { background-color: @surface; border-color: @border_dim; color: @muted; opacity: 0.50; }
+button:focus    { border-color: @cyan; box-shadow: 0 0 0 2px @focus_ring; }
+button:checked,
+button.toggle:checked { background-color: @cyan_dim; border-color: @cyan; color: @cyan; }
+
+button.suggested-action {
+  background-color: @magenta;
+  border-color: @magenta;
+  color: @bg;
+  font-weight: bold;
+}
+button.suggested-action:hover {
+  background-color: alpha(@magenta, 0.84);
+  box-shadow: 0 0 10px alpha(@magenta, 0.45);
+}
+
+button.destructive-action            { background-color: @red; border-color: @red; color: @bg; }
+button.destructive-action:hover      { background-color: alpha(@red, 0.82); }
+
+button.flat               { background-color: transparent; border-color: transparent; }
+button.flat:hover         { background-color: @magenta_dim; border-color: alpha(@magenta, 0.30); }
+
+button.link               { background: none; border: none; color: @cyan; text-decoration: underline; padding: 0; }
+button.link:hover         { color: @violet; }
+
+/* ── Entry ───────────────────────────────────────────────────────── */
+entry {
+  background-color: @raised;
+  color: @text;
+  border: 1px solid @border_dim;
+  border-radius: 4px;
+  padding: 5px 9px;
+  caret-color: @magenta;
+  selection-background-color: rgba(0,245,255,0.26);
+}
+
+entry:focus    { border-color: @cyan; box-shadow: 0 0 0 2px @focus_ring; }
+entry:disabled { background-color: @surface; color: @muted; opacity: 0.60; }
+entry.warning  { border-color: @yellow; }
+entry.error    { border-color: @red; box-shadow: 0 0 0 2px alpha(@red, 0.18); }
+
+searchentry {
+  background-color: @raised;
+  border: 1px solid @border_dim;
+  border-radius: 20px;
+  color: @text;
+  padding: 4px 10px;
+}
+searchentry:focus { border-color: @cyan; box-shadow: 0 0 0 2px @focus_ring; }
+
+/* ── Spinbox ─────────────────────────────────────────────────────── */
+spinbutton button {
+  background-color: transparent;
+  border-color: transparent;
+  color: @muted;
+  min-width: 22px;
+  padding: 2px;
+}
+spinbutton button:hover  { color: @cyan; background-color: @cyan_dim; }
+spinbutton button:active { color: @magenta; }
+
+/* ── ComboBox ────────────────────────────────────────────────────── */
+combobox button.combo {
+  background-color: @raised;
+  border: 1px solid @border_dim;
+  border-radius: 4px;
+  color: @text;
+  padding: 4px 8px;
+}
+combobox button.combo:hover  { border-color: @magenta; background-color: @magenta_dim; }
+combobox button.combo:focus  { border-color: @cyan; box-shadow: 0 0 0 2px @focus_ring; }
+.combo arrow { color: @muted; }
+
+/* ── Check / Radio ───────────────────────────────────────────────── */
+checkbutton { color: @text; }
+checkbutton check {
+  background-color: @raised;
+  border: 1px solid @border_dim;
+  border-radius: 3px;
+  min-width: 14px;
+  min-height: 14px;
+}
+checkbutton:hover check    { border-color: @magenta; }
+checkbutton check:checked  { background-color: @magenta; border-color: @magenta; color: @bg; }
+
+radiobutton { color: @text; }
+radiobutton radio {
+  background-color: @raised;
+  border: 1px solid @border_dim;
+  border-radius: 50%;
+  min-width: 14px;
+  min-height: 14px;
+}
+radiobutton:hover radio   { border-color: @cyan; }
+radiobutton radio:checked { background-color: @cyan; border-color: @cyan; }
+
+/* ── Switch ──────────────────────────────────────────────────────── */
+switch {
+  background-color: @surface;
+  border: 1px solid @border_dim;
+  border-radius: 14px;
+  min-width: 40px;
+  min-height: 20px;
+  transition: background-color 200ms;
+}
+switch:checked { background-color: @magenta; border-color: @magenta; }
+switch:focus   { box-shadow: 0 0 0 2px @focus_ring; }
+switch slider  { background-color: @text; border-radius: 50%; min-width: 16px; min-height: 16px; margin: 2px; }
+
+/* ── Scrollbars ──────────────────────────────────────────────────── */
+scrollbar { background-color: transparent; border: none; }
+
+scrollbar.vertical trough   { background-color: alpha(@surface, 0.50); min-width: 6px; border-radius: 3px; }
+scrollbar.horizontal trough { background-color: alpha(@surface, 0.50); min-height: 6px; border-radius: 3px; }
+
+scrollbar slider {
+  background-color: @magenta;
+  border-radius: 4px;
+  min-width: 6px;
+  min-height: 40px;
+  margin: 2px;
+  transition: background-color 150ms;
+}
+scrollbar slider:hover  { background-color: @violet; }
+scrollbar slider:active { background-color: @cyan; }
+
+/* ── Progress ────────────────────────────────────────────────────── */
+progressbar trough   { background-color: @surface; border-radius: 4px; min-height: 6px; }
+progressbar progress { background-color: @magenta; border-radius: 4px; min-height: 6px; box-shadow: 0 0 8px alpha(@magenta, 0.40); }
+
+/* ── Scale ───────────────────────────────────────────────────────── */
+scale trough    { background-color: @surface; border-radius: 4px; min-height: 4px; }
+scale highlight { background-color: @magenta; border-radius: 4px; }
+scale slider    { background-color: @magenta; border-radius: 50%; min-width: 14px; min-height: 14px; }
+scale slider:hover  { background-color: @violet; box-shadow: 0 0 6px alpha(@violet, 0.40); }
+scale slider:active { background-color: @cyan;   box-shadow: 0 0 8px alpha(@cyan, 0.45); }
+
+/* ── Menus ───────────────────────────────────────────────────────── */
+menu,
+.menu,
+.context-menu {
+  background-color: @raised;
+  color: @text;
+  border: 1px solid @border_dim;
+  border-radius: 6px;
+  padding: 4px;
+  box-shadow: 0 10px 30px alpha(@bg, 0.85);
+}
+
+menuitem {
+  border-radius: 4px;
+  padding: 5px 8px;
+  color: @text;
+  transition: background-color 100ms;
+}
+menuitem:hover,
+menuitem:selected       { background-color: @magenta_dim; border-left: 2px solid @magenta; }
+menuitem:disabled       { color: @muted; opacity: 0.55; }
+menuitem accelerator    { color: @muted; font-size: smaller; }
+menuitem check,
+menuitem radio          { color: @cyan; }
+
+separator,
+menuitem separator      { background-color: @border_dim; min-height: 1px; margin: 3px 8px; }
+
+menubar {
+  background-color: @surface;
+  color: @text;
+  border-bottom: 1px solid @border_dim;
+}
+menubar > menuitem               { border-radius: 0; padding: 4px 10px; }
+menubar > menuitem:hover         { background-color: @magenta_dim; border-left: none; }
+
+/* ── Notebook ────────────────────────────────────────────────────── */
+notebook       { background-color: @bg; }
+notebook stack { background-color: @bg; }
+
+notebook header {
+  background-color: @surface;
+  border-bottom: 1px solid @border_dim;
+  padding: 2px;
+}
+
+notebook tab {
+  background-color: transparent;
+  color: @muted;
+  border: 1px solid transparent;
+  padding: 6px 14px;
+  border-radius: 4px 4px 0 0;
+  transition: color 150ms, background-color 150ms;
+}
+notebook tab:hover   { color: @text; background-color: @violet_dim; }
+notebook tab:checked {
+  color: @text;
+  background-color: @magenta_dim;
+  border-color: @border_dim @border_dim transparent @border_dim;
+  box-shadow: inset 0 2px 0 @magenta;
+}
+notebook tab button {
+  color: @muted;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  padding: 2px;
+  min-width: 14px;
+  min-height: 14px;
+}
+notebook tab button:hover { color: @magenta; background-color: @magenta_dim; }
+
+/* ── Toolbar ─────────────────────────────────────────────────────── */
+toolbar {
+  background-color: @surface;
+  border-bottom: 1px solid @border_dim;
+  padding: 2px 4px;
+}
+toolbar separator { background-color: @border_dim; margin: 4px 2px; min-width: 1px; }
+
+/* ── Sidebar ─────────────────────────────────────────────────────── */
+.sidebar,
+.sidebar scrolledwindow,
+.sidebar viewport { background-color: @surface; color: @text; }
+
+.sidebar { border-right: 1px solid @border_dim; }
+
+.sidebar row {
+  background-color: transparent;
+  color: @text;
+  padding: 6px 8px;
+  border-radius: 4px;
+  margin: 1px 4px;
+}
+.sidebar row:hover    { background-color: @violet_dim; }
+.sidebar row:selected { background-color: @cyan_dim; color: @cyan; }
+
+.sidebar .heading label {
+  color: @muted;
+  font-size: smaller;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 4px 8px 2px 8px;
+}
+
+/* ── Paned separator ─────────────────────────────────────────────── */
+paned > separator { background-color: @border_dim; min-width: 1px; min-height: 1px; }
+paned > separator:hover { background-color: @violet; opacity: 0.80; }
+
+/* ── Column headers ──────────────────────────────────────────────── */
+.view column-header button,
+treeview header button {
+  background-color: @surface;
+  color: @muted;
+  border-bottom: 1px solid alpha(@violet, 0.28);
+  border-right: none; border-top: none; border-left: none;
+  border-radius: 0;
+  padding: 4px 8px;
+}
+.view column-header button:hover,
+treeview header button:hover { background-color: @violet_dim; color: @text; }
+
+/* ── Status bar ──────────────────────────────────────────────────── */
+statusbar {
+  background-color: @surface;
+  color: @muted;
+  border-top: 1px solid alpha(@violet, 0.22);
+  padding: 2px 6px;
+  font-size: smaller;
+}
+
+/* ── Tooltip ─────────────────────────────────────────────────────── */
+tooltip {
+  background-color: @raised;
+  color: @text;
+  border: 1px solid @border_dim;
+  border-radius: 4px;
+  padding: 5px 9px;
+}
+tooltip label { color: @text; }
+
+/* ── Frame / popover / infobar ───────────────────────────────────── */
+frame border { border: 1px solid @border_dim; border-radius: 4px; }
+frame label  { color: @muted; }
+
+popover {
+  background-color: @raised;
+  color: @text;
+  border: 1px solid @border_dim;
+  border-radius: 6px;
+  padding: 4px;
+  box-shadow: 0 10px 30px alpha(@bg, 0.85);
+}
+popover > contents  { background-color: transparent; }
+popover modelbutton { padding: 6px 10px; border-radius: 4px; color: @text; }
+popover modelbutton:hover { background-color: @magenta_dim; }
+
+infobar { background-color: @surface; color: @text; border-bottom: 1px solid @border_dim; padding: 6px; }
+infobar.info    { border-left: 3px solid @cyan;   }
+infobar.warning { border-left: 3px solid @yellow; }
+infobar.error   { border-left: 3px solid @red;    }
+infobar.success { border-left: 3px solid @green;  }
+
+/* ── Places sidebar (file chooser) ──────────────────────────────── */
+.placessidebar { background-color: @surface; border-right: 1px solid @border_dim; }
+.placessidebar row { padding: 5px 8px; border-radius: 4px; color: @text; }
+.placessidebar row:hover    { background-color: @violet_dim; }
+.placessidebar row:selected { background-color: @cyan_dim; color: @cyan; }
+.placessidebar .sidebar-section-header { color: @muted; font-size: smaller; text-transform: uppercase; letter-spacing: 0.10em; }
+
+/* ── Stack switcher ──────────────────────────────────────────────── */
+stackswitcher button { background-color: transparent; border-bottom: 2px solid transparent; border-radius: 0; color: @muted; padding: 6px 12px; }
+stackswitcher button:hover   { color: @text; border-bottom-color: alpha(@violet, 0.50); }
+stackswitcher button:checked { color: @text; border-bottom-color: @magenta; font-weight: bold; }
+
+/* ── OSD ─────────────────────────────────────────────────────────── */
+.osd { background-color: alpha(@raised, 0.92); color: @text; border: 1px solid @border_dim; border-radius: 8px; }
+
+/* ── Drag / rubberband ───────────────────────────────────────────── */
+.dnd { border: 2px dashed @magenta; border-radius: 4px; }
+rubberband { background-color: alpha(@cyan, 0.10); border: 1px solid @cyan; }
