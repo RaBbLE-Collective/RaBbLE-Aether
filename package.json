@@ -8,7 +8,8 @@
     "build:min": "npx esbuild src/entry.css --bundle --minify --outfile=dist/aether.min.css --sourcemap=linked",
     "build:dev": "npx esbuild src/entry.css --bundle --outfile=dist/aether.css --sourcemap",
     "build:watch": "npx esbuild src/entry.css --bundle --outfile=dist/aether.css --sourcemap --watch",
-    "cast": "npm run build && cp dist/aether.min.css dist/aether.min.css.map ../RaBbLE-World/aether/v0.0.0.0/ && cp dist/aether.css dist/aether.css.map ../RaBbLE-World/aether/v0.0.0.0/"
+    "cast": "npm run build && cp dist/aether.min.css dist/aether.min.css.map ../RaBbLE-World/aether/v0.0.0.0/ && cp dist/aether.css dist/aether.css.map ../RaBbLE-World/aether/v0.0.0.0/",
+    "build:versioned": "VERSION=${npm_config_version:-v0.0.0.1} && npm run build:dev && npm run build && mkdir -p dist/$VERSION && cp dist/aether.css dist/aether.css.map dist/aether.min.css dist/aether.min.css.map dist/$VERSION/ 2>/dev/null; echo \"Built → dist/$VERSION/\""
   },
   "devDependencies": {
     "esbuild": "^0.28.0"
