@@ -1,0 +1,99 @@
+/**
+ * rabble-theme.css — Aether Theme Variants
+ *
+ * Requires: rabble-palette.css (loaded first via src/entry.css)
+ *
+ * Variants defined here:
+ *   [data-aether="muted"]   Low-glow "lights-off" preset.
+ *                           Sets --aether-neon: 0.2 and desaturates
+ *                           backgrounds for a calm, readable look.
+ *
+ * Usage:
+ *   // Switch to muted (lights-off) mode:
+ *   document.documentElement.dataset.aether = 'muted';
+ *
+ *   // Return to full neon:
+ *   delete document.documentElement.dataset.aether;
+ *   // or:
+ *   document.documentElement.removeAttribute('data-aether');
+ *
+ *   // Set an intermediate intensity (e.g. 50%):
+ *   document.documentElement.style.setProperty('--aether-neon', '0.5');
+ *
+ *   // Recolor the gradient poles:
+ *   document.documentElement.style.setProperty('--aether-grad-a', '#bf5fff');
+ *   document.documentElement.style.setProperty('--aether-grad-b', '#00f5ff');
+ */
+
+/* ═══════════════════════════════════════════════════════════════
+   MUTED — "lights-off" low-glow preset
+   --aether-neon: 0.2  → glows at 20% blur + 20% opacity
+   Backgrounds shift toward desaturated navy; palette hues are
+   preserved so the UI stays readable without being neon-blasted.
+   ═══════════════════════════════════════════════════════════════ */
+
+[data-aether="muted"] {
+  /* ── Neon intensity: 20% of full ─────────────────────────────── */
+  --aether-neon: 0.2;
+
+  /* ── Background desaturation ──────────────────────────────────
+     Shift void/bg/surface toward darker, less saturated navy.
+     Hue is kept to maintain the RaBbLE visual fingerprint.       */
+  --rabble-void:    #05050f;
+  --rabble-bg:      #080814;
+  --rabble-surface: #0e0f1c;
+  --rabble-raised:  #141526;
+  --rabble-border:  #1e1e30;
+
+  /* ── Text — soften, reduce contrast slightly ─────────────────── */
+  --rabble-text:   #b8b6c8;
+  --rabble-muted:  #6a6880;
+  --rabble-dimmer: #3a3660;
+
+  /* ── Gradient poles — muted versions of the defaults ─────────── */
+  --aether-grad-a: #c42060;   /* muted magenta */
+  --aether-grad-b: #009baa;   /* muted cyan    */
+
+  /* ── Palette neons — reduced but legible ─────────────────────── */
+  --rabble-magenta: #c42060;
+  --rabble-cyan:    #009baa;
+  --rabble-violet:  #8840cc;
+
+  /* ── Alpha variants re-computed for muted colors ─────────────── */
+  --rabble-magenta-10: rgba(196, 32,  96,  0.10);
+  --rabble-magenta-20: rgba(196, 32,  96,  0.20);
+  --rabble-magenta-35: rgba(196, 32,  96,  0.35);
+  --rabble-cyan-10:    rgba(0,   155, 170, 0.10);
+  --rabble-cyan-20:    rgba(0,   155, 170, 0.20);
+  --rabble-cyan-35:    rgba(0,   155, 170, 0.35);
+  --rabble-violet-10:  rgba(136, 64,  204, 0.10);
+  --rabble-violet-20:  rgba(136, 64,  204, 0.20);
+  --rabble-violet-40:  rgba(136, 64,  204, 0.40);
+}
+
+/* ── Convenience class alias — apply to :root or any wrapper ──── */
+.aether-lights-off {
+  --aether-neon: 0.2;
+  --rabble-void:    #05050f;
+  --rabble-bg:      #080814;
+  --rabble-surface: #0e0f1c;
+  --rabble-raised:  #141526;
+  --rabble-border:  #1e1e30;
+  --rabble-text:   #b8b6c8;
+  --rabble-muted:  #6a6880;
+  --rabble-dimmer: #3a3660;
+  --aether-grad-a: #c42060;
+  --aether-grad-b: #009baa;
+  --rabble-magenta: #c42060;
+  --rabble-cyan:    #009baa;
+  --rabble-violet:  #8840cc;
+  --rabble-magenta-10: rgba(196, 32,  96,  0.10);
+  --rabble-magenta-20: rgba(196, 32,  96,  0.20);
+  --rabble-magenta-35: rgba(196, 32,  96,  0.35);
+  --rabble-cyan-10:    rgba(0,   155, 170, 0.10);
+  --rabble-cyan-20:    rgba(0,   155, 170, 0.20);
+  --rabble-cyan-35:    rgba(0,   155, 170, 0.35);
+  --rabble-violet-10:  rgba(136, 64,  204, 0.10);
+  --rabble-violet-20:  rgba(136, 64,  204, 0.20);
+  --rabble-violet-40:  rgba(136, 64,  204, 0.40);
+}

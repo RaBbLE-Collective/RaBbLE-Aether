@@ -82,6 +82,66 @@ All Aether colors are exposed as CSS custom properties. Use them in your stylesh
 }
 ```
 
+## Modular Neon — Configurable Gradients + Intensity
+
+Aether exposes three tokens that let you re-skin the signature look without touching any Collective members:
+
+| Token | Default | Purpose |
+|---|---|---|
+| `--aether-grad-a` | `#ff2d78` | Primary gradient stop — re-skins all signature gradients |
+| `--aether-grad-b` | `#00f5ff` | Secondary gradient stop |
+| `--aether-neon`   | `1`       | Glow intensity dial (0.0 – 1.0); scales blur radius + color opacity on all pre-computed glow tokens |
+
+### Recolor the gradient poles
+
+```js
+// Violet → cyan sweep instead of magenta → cyan
+document.documentElement.style.setProperty('--aether-grad-a', '#bf5fff');
+document.documentElement.style.setProperty('--aether-grad-b', '#00f5ff');
+```
+
+### Dial neon intensity
+
+```js
+// 50% intensity — half blur, half opacity on all glows
+document.documentElement.style.setProperty('--aether-neon', '0.5');
+```
+
+Or in CSS:
+
+```css
+:root { --aether-neon: 0.5; }
+```
+
+### Muted / "lights-off" variant
+
+Apply `data-aether="muted"` to `:root` (or any ancestor) for a calm, desaturated low-glow look:
+
+```js
+// Switch to muted mode
+document.documentElement.dataset.aether = 'muted';
+
+// Return to full neon
+delete document.documentElement.dataset.aether;
+```
+
+Or use the convenience class `.aether-lights-off` on any wrapper element.
+
+The muted preset sets `--aether-neon: 0.2`, desaturates backgrounds toward dark navy, and mutes the palette neons — without breaking the visual fingerprint.
+
+### How glow scaling works
+
+All pre-computed glow tokens (`--rabble-glow-magenta-sm`, etc.) use `color-mix` and `calc()` to scale with `--aether-neon`:
+
+```css
+--rabble-glow-magenta-sm: 0 0 calc(6px * var(--aether-neon))
+  color-mix(in srgb, #ff2d78 calc(var(--aether-neon) * 100%), transparent);
+```
+
+At `--aether-neon: 1.0` this resolves to the original `0 0 6px #ff2d78`. At `--aether-neon: 0.2`, blur collapses to 1.2px and color is 20% magenta.
+
+`--aether-neon` is registered with `@property { syntax: '<number>' }` so it supports CSS transitions.
+
 ## Motion Primitives
 
 Aether includes a suite of motion keyframes for consistent animation:

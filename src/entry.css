@@ -1,7 +1,7 @@
 /* entry.css — Aether design system bundle entry point
 
    esbuild bundles this into dist/aether.min.css (prod) or dist/aether.css (dev).
-   Import order: fonts → palette → motion → components.
+   Import order: fonts → palette → motion → components → theme variants.
 */
 
 /* ── Fonts — Aether owns all RaBbLE typefaces ──────────────────── */
@@ -11,3 +11,4 @@
 @import '../assets/palette/rabble-palette.css';
 @import '../assets/motion/rabble-motion.css';
 @import '../assets/components/rabble-components.css';
+@import '../assets/theme/rabble-theme.css';

@@ -160,7 +160,9 @@ hr {
 .horizon {
   position: fixed; left: 0; right: 0; top: 60%; height: 1px;
   background: linear-gradient(90deg, transparent, var(--rabble-magenta, #ff2d78), transparent);
-  box-shadow: 0 0 14px var(--rabble-magenta, #ff2d78), 0 0 28px rgba(255,45,120,0.4);
+  box-shadow:
+    0 0 calc(14px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 100%), transparent),
+    0 0 calc(28px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 40%),  transparent);
   z-index: 1; pointer-events: none;
 }
 
@@ -200,7 +202,7 @@ hr {
   font-weight: 800;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  filter: drop-shadow(0 0 18px rgba(255,45,120,0.3));
+  filter: drop-shadow(0 0 calc(18px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 30%), transparent));
 }
 
 /* Static two-color gradient text */

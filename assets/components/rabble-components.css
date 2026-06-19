@@ -173,7 +173,9 @@ hr {
 .horizon {
   position: fixed; left: 0; right: 0; top: 60%; height: 1px;
   background: linear-gradient(90deg, transparent, var(--rabble-magenta, #ff2d78), transparent);
-  box-shadow: 0 0 14px var(--rabble-magenta, #ff2d78), 0 0 28px rgba(255,45,120,0.4);
+  box-shadow:
+    0 0 calc(14px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 100%), transparent),
+    0 0 calc(28px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 40%),  transparent);
   z-index: 1; pointer-events: none;
 }
 
@@ -213,7 +215,7 @@ hr {
   font-weight: 800;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  filter: drop-shadow(0 0 18px rgba(255,45,120,0.3));
+  filter: drop-shadow(0 0 calc(18px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 30%), transparent));
 }
 
 /* Static two-color gradient text */
@@ -268,7 +270,7 @@ hr {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
-  box-shadow: 0 0 20px rgba(255,45,120,0.25);
+  box-shadow: 0 0 calc(20px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 25%), transparent);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
   position: relative;
   overflow: hidden;
@@ -282,7 +284,9 @@ hr {
 }
 
 .rabble-btn:hover {
-  box-shadow: 0 0 32px rgba(255,45,120,0.45), 0 0 60px rgba(191,95,255,0.2);
+  box-shadow:
+    0 0 calc(32px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 45%), transparent),
+    0 0 calc(60px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet,  #bf5fff) calc(var(--aether-neon, 1) * 20%), transparent);
   transform: translateY(-2px);
 }
 
@@ -290,7 +294,7 @@ hr {
 
 .rabble-btn:active {
   transform: translateY(0);
-  box-shadow: 0 0 12px rgba(255,45,120,0.3);
+  box-shadow: 0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 30%), transparent);
 }
 
 .rabble-btn:focus-visible {
@@ -309,18 +313,18 @@ hr {
 .rabble-btn-ghost:hover {
   background: rgba(191,95,255,0.12);
   border-color: rgba(191,95,255,0.4);
-  box-shadow: 0 0 14px rgba(191,95,255,0.2);
+  box-shadow: 0 0 calc(14px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet, #bf5fff) calc(var(--aether-neon, 1) * 20%), transparent);
   transform: translateY(-1px);
 }
 
 /* Cyan variant */
 .rabble-btn-cyan {
   background: linear-gradient(135deg, var(--rabble-cyan, #00f5ff), var(--rabble-violet, #bf5fff));
-  box-shadow: 0 0 20px rgba(0,245,255,0.2);
+  box-shadow: 0 0 calc(20px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan, #00f5ff) calc(var(--aether-neon, 1) * 20%), transparent);
 }
 
 .rabble-btn-cyan:hover {
-  box-shadow: 0 0 32px rgba(0,245,255,0.45);
+  box-shadow: 0 0 calc(32px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan, #00f5ff) calc(var(--aether-neon, 1) * 45%), transparent);
 }
 
 /* Size modifiers */
@@ -441,7 +445,7 @@ hr {
   background: var(--rabble-gradient-primary, linear-gradient(90deg, #ff2d78, #bf5fff));
   border-radius: var(--rabble-radius-pill);
   transition: width 0.4s ease;
-  box-shadow: 0 0 8px rgba(255,45,120,0.5);
+  box-shadow: 0 0 calc(8px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 50%), transparent);
 }
 
 /* ═══════════════════════════════════════════════════════════════

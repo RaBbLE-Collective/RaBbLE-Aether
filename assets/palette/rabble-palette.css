@@ -6,9 +6,48 @@
  *
  * Usage: <link rel="stylesheet" href="path/to/RaBbLE-Aether/assets/palette/rabble-palette.css">
  * All member repos must reference this file — never re-declare these values.
+ *
+ * ── Modular Neon System (added v0.0.0.1) ─────────────────────────
+ *
+ * Two configurable gradient poles:
+ *   --aether-grad-a   Primary gradient stop  (default: magenta #ff2d78)
+ *   --aether-grad-b   Secondary gradient stop (default: cyan   #00f5ff)
+ *   Changing these two vars re-skins all signature gradients.
+ *
+ * Manual neon intensity dial (0.0 – 1.0):
+ *   --aether-neon     1.0 = full neon (current look), ~0.2 = barely-there
+ *   Scales glow blur radius and color opacity on all pre-computed glow tokens.
+ *   Registered as @property for smooth CSS transitions.
+ *
+ * Muted / lights-off variant:
+ *   [data-aether="muted"]  on :root or any ancestor — sets --aether-neon: 0.2,
+ *   desaturates backgrounds, and mutes palette to a calm low-glow look.
+ *   Defined in assets/theme/rabble-theme.css, bundled via src/entry.css.
+ *
+ * Example — switch to muted:
+ *   document.documentElement.dataset.aether = 'muted';
+ *
+ * Example — recolor the gradient to violet→cyan:
+ *   document.documentElement.style.setProperty('--aether-grad-a', '#bf5fff');
+ *   document.documentElement.style.setProperty('--aether-grad-b', '#00f5ff');
  */
 
+/* ── Neon intensity — registered so calc() and transitions work ─── */
+@property --aether-neon {
+  syntax: '<number>';
+  initial-value: 1;
+  inherits: true;
+}
+
 :root {
+  /* ── Neon intensity dial (0.0 – 1.0, default full neon) ──────── */
+  --aether-neon: 1;
+
+  /* ── Configurable gradient poles ────────────────────────────── */
+  /* Change these two vars to re-skin every signature gradient.   */
+  --aether-grad-a: #ff2d78;   /* Primary stop   — default: magenta */
+  --aether-grad-b: #00f5ff;   /* Secondary stop — default: cyan    */
+
   /* ── Core Neons (Primary Identity) ───────────────────────────── */
   --rabble-magenta:  #ff2d78;   /* Hot Magenta — primary signature */
   --rabble-cyan:     #00f5ff;   /* Electric Cyan — secondary neon */
@@ -37,15 +76,18 @@
   --rabble-font-ui:   'Exo 2', 'Rajdhani', sans-serif;
   --rabble-font-hero: 'Orbitron', 'Exo 2', sans-serif; /* OS lockups, wordmark, brand crawls */
 
-  /* ── Pre-computed glow shadows (use directly in box-shadow / text-shadow) ── */
-  --rabble-glow-magenta-sm:  0 0 6px #ff2d78;
-  --rabble-glow-magenta-md:  0 0 14px #ff2d78;
-  --rabble-glow-magenta-lg:  0 0 28px #ff2d78;
-  --rabble-glow-cyan-sm:     0 0 6px #00f5ff;
-  --rabble-glow-cyan-md:     0 0 14px #00f5ff;
-  --rabble-glow-cyan-lg:     0 0 28px #00f5ff;
-  --rabble-glow-violet-sm:   0 0 6px #bf5fff;
-  --rabble-glow-violet-md:   0 0 14px #bf5fff;
+  /* ── Pre-computed glow shadows — scale with --aether-neon ──────
+     blur = base * neon; color opacity = neon * 100% via color-mix.
+     At neon=1.0 these resolve to exactly the original values.
+     At neon=0.0 blur collapses to 0 and color becomes transparent.  */
+  --rabble-glow-magenta-sm: 0 0 calc(6px  * var(--aether-neon)) color-mix(in srgb, #ff2d78 calc(var(--aether-neon) * 100%), transparent);
+  --rabble-glow-magenta-md: 0 0 calc(14px * var(--aether-neon)) color-mix(in srgb, #ff2d78 calc(var(--aether-neon) * 100%), transparent);
+  --rabble-glow-magenta-lg: 0 0 calc(28px * var(--aether-neon)) color-mix(in srgb, #ff2d78 calc(var(--aether-neon) * 100%), transparent);
+  --rabble-glow-cyan-sm:    0 0 calc(6px  * var(--aether-neon)) color-mix(in srgb, #00f5ff calc(var(--aether-neon) * 100%), transparent);
+  --rabble-glow-cyan-md:    0 0 calc(14px * var(--aether-neon)) color-mix(in srgb, #00f5ff calc(var(--aether-neon) * 100%), transparent);
+  --rabble-glow-cyan-lg:    0 0 calc(28px * var(--aether-neon)) color-mix(in srgb, #00f5ff calc(var(--aether-neon) * 100%), transparent);
+  --rabble-glow-violet-sm:  0 0 calc(6px  * var(--aether-neon)) color-mix(in srgb, #bf5fff calc(var(--aether-neon) * 100%), transparent);
+  --rabble-glow-violet-md:  0 0 calc(14px * var(--aether-neon)) color-mix(in srgb, #bf5fff calc(var(--aether-neon) * 100%), transparent);
 
   /* ── Glow offsets (composable: var(--rabble-glow-md) var(--rabble-magenta)) ── */
   --rabble-glow-sm:  0 0 6px;
@@ -82,10 +124,11 @@
   --rabble-ease-slow:   0.4s ease;
   --rabble-ease-reveal: 1.1s cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* ── Gradient shortcuts ──────────────────────────────────────── */
-  --rabble-gradient-primary: linear-gradient(135deg, var(--rabble-magenta), var(--rabble-violet));
-  --rabble-gradient-scan:    linear-gradient(90deg, var(--rabble-magenta), var(--rabble-cyan));
-  --rabble-gradient-holo:    linear-gradient(90deg, var(--rabble-magenta), var(--rabble-cyan), var(--rabble-violet), var(--rabble-magenta));
+  /* ── Gradient shortcuts — use --aether-grad-a/b as primary poles ─
+     Changing --aether-grad-a and --aether-grad-b re-skins these globally. */
+  --rabble-gradient-primary: linear-gradient(135deg, var(--aether-grad-a), var(--rabble-violet));
+  --rabble-gradient-scan:    linear-gradient(90deg,  var(--aether-grad-a), var(--aether-grad-b));
+  --rabble-gradient-holo:    linear-gradient(90deg,  var(--aether-grad-a), var(--aether-grad-b), var(--rabble-violet), var(--aether-grad-a));
 
   /* ── Pre-computed alpha variants (rgba — use directly, not with hex vars) ── */
   --rabble-magenta-10: rgba(255, 45, 120, 0.10);
@@ -145,4 +188,5 @@
   /* ── Outrun grid ─────────────────────────────────────────────── */
   --rabble-grid-line:    rgba(255, 121, 198, 0.18);
   --rabble-grid-horizon: linear-gradient(180deg, transparent 0%, rgba(255,45,120,0.10) 65%, rgba(255,45,120,0.45) 100%);
+  /* grid-horizon uses fixed rgba because the pink/horizon tone is intentionally distinct from grad-a */
 }

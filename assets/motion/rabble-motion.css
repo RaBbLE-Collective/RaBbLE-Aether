@@ -109,18 +109,30 @@
 }
 
 @keyframes rabble-glow-pulse-magenta {
-  0%, 100% { box-shadow: 0 0 6px var(--rabble-magenta, #ff2d78); }
-  50%       { box-shadow: 0 0 24px var(--rabble-magenta, #ff2d78), 0 0 48px rgba(255, 45, 120, 0.3); }
+  0%, 100% { box-shadow: var(--rabble-glow-magenta-sm); }
+  50%       {
+    box-shadow:
+      0 0 calc(24px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 100%), transparent),
+      0 0 calc(48px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 30%),  transparent);
+  }
 }
 
 @keyframes rabble-glow-pulse-cyan {
-  0%, 100% { box-shadow: 0 0 6px var(--rabble-cyan, #00f5ff); }
-  50%       { box-shadow: 0 0 24px var(--rabble-cyan, #00f5ff), 0 0 48px rgba(0, 245, 255, 0.3); }
+  0%, 100% { box-shadow: var(--rabble-glow-cyan-sm); }
+  50%       {
+    box-shadow:
+      0 0 calc(24px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan, #00f5ff) calc(var(--aether-neon, 1) * 100%), transparent),
+      0 0 calc(48px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan, #00f5ff) calc(var(--aether-neon, 1) * 30%),  transparent);
+  }
 }
 
 @keyframes rabble-glow-pulse-violet {
-  0%, 100% { box-shadow: 0 0 6px var(--rabble-violet, #bf5fff); }
-  50%       { box-shadow: 0 0 24px var(--rabble-violet, #bf5fff), 0 0 48px rgba(191, 95, 255, 0.3); }
+  0%, 100% { box-shadow: var(--rabble-glow-violet-sm); }
+  50%       {
+    box-shadow:
+      0 0 calc(24px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet, #bf5fff) calc(var(--aether-neon, 1) * 100%), transparent),
+      0 0 calc(48px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet, #bf5fff) calc(var(--aether-neon, 1) * 30%),  transparent);
+  }
 }
 
 @keyframes rabble-status-pulse {
@@ -131,11 +143,15 @@
 @keyframes rabble-logo-pulse {
   0%, 100% {
     transform: scale(1);
-    box-shadow: 0 0 30px var(--rabble-magenta, #ff2d78), 0 0 60px var(--rabble-violet, #bf5fff);
+    box-shadow:
+      0 0 calc(30px  * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 100%), transparent),
+      0 0 calc(60px  * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet,  #bf5fff) calc(var(--aether-neon, 1) * 100%), transparent);
   }
   50% {
     transform: scale(1.06);
-    box-shadow: 0 0 50px var(--rabble-magenta, #ff2d78), 0 0 100px var(--rabble-violet, #bf5fff);
+    box-shadow:
+      0 0 calc(50px  * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 100%), transparent),
+      0 0 calc(100px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet,  #bf5fff) calc(var(--aether-neon, 1) * 100%), transparent);
   }
 }
 
@@ -244,8 +260,16 @@
 }
 
 @keyframes brand-glow {
-  0%, 100% { text-shadow: 0 0 14px rgba(0, 245, 255, 0.5), 0 0 28px rgba(0, 245, 255, 0.2); }
-  50%       { text-shadow: 0 0 14px rgba(255, 45, 120, 0.5), 0 0 28px rgba(255, 45, 120, 0.2); }
+  0%, 100% {
+    text-shadow:
+      0 0 calc(14px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan,    #00f5ff) calc(var(--aether-neon, 1) * 50%), transparent),
+      0 0 calc(28px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan,    #00f5ff) calc(var(--aether-neon, 1) * 20%), transparent);
+  }
+  50% {
+    text-shadow:
+      0 0 calc(14px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 50%), transparent),
+      0 0 calc(28px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 20%), transparent);
+  }
 }
 
 /* Harmony flow — cyan chases magenta across a flowing gradient */
@@ -296,10 +320,26 @@
 
 /* Glow cycles through the same color order as the spin, linear so it loops cleanly */
 @keyframes harmony-glow {
-  0%   { box-shadow: 0 0 12px rgba(0, 245, 255, 0.35), inset 0 0 12px rgba(0, 245, 255, 0.08); }
-  33%  { box-shadow: 0 0 12px rgba(191, 95, 255, 0.35), inset 0 0 12px rgba(191, 95, 255, 0.08); }
-  66%  { box-shadow: 0 0 12px rgba(255, 45, 120, 0.35), inset 0 0 12px rgba(255, 45, 120, 0.08); }
-  100% { box-shadow: 0 0 12px rgba(0, 245, 255, 0.35), inset 0 0 12px rgba(0, 245, 255, 0.08); }
+  0%   {
+    box-shadow:
+      0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan,    #00f5ff) calc(var(--aether-neon, 1) * 35%), transparent),
+      inset 0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan,    #00f5ff) calc(var(--aether-neon, 1) * 8%), transparent);
+  }
+  33%  {
+    box-shadow:
+      0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet,  #bf5fff) calc(var(--aether-neon, 1) * 35%), transparent),
+      inset 0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet,  #bf5fff) calc(var(--aether-neon, 1) * 8%), transparent);
+  }
+  66%  {
+    box-shadow:
+      0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 35%), transparent),
+      inset 0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 8%), transparent);
+  }
+  100% {
+    box-shadow:
+      0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan,    #00f5ff) calc(var(--aether-neon, 1) * 35%), transparent),
+      inset 0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan,    #00f5ff) calc(var(--aether-neon, 1) * 8%), transparent);
+  }
 }
 
 /* Harmony line — 1px scrolling accent, colors always full-spectrum, no fade to void */
