@@ -189,4 +189,15 @@
   --rabble-grid-line:    rgba(255, 121, 198, 0.18);
   --rabble-grid-horizon: linear-gradient(180deg, transparent 0%, rgba(255,45,120,0.10) 65%, rgba(255,45,120,0.45) 100%);
   /* grid-horizon uses fixed rgba because the pink/horizon tone is intentionally distinct from grad-a */
+
+  /* ── Glass recipe shortcuts ───────────────────────────────── */
+  /* color-mix keeps these dynamic — they re-compute if surface vars change */
+  --rabble-glass-78: color-mix(in srgb, var(--rabble-surface) 78%, transparent);
+  --rabble-glass-80: color-mix(in srgb, var(--rabble-raised)  80%, transparent);
+
+  /* ── Component accent ────────────────────────────────────── */
+  /* Per-element accent for cards, badges, panels, etc.
+     Override inline or via .rabble-accent-<name> modifiers.
+     Default: magenta (primary identity colour). */
+  --rabble-accent: var(--rabble-magenta);
 }

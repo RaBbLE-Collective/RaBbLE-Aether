@@ -112,8 +112,8 @@
   0%, 100% { box-shadow: var(--rabble-glow-magenta-sm); }
   50%       {
     box-shadow:
-      0 0 calc(24px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 100%), transparent),
-      0 0 calc(48px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 30%),  transparent);
+      0 0 calc(24px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta) calc(var(--aether-neon, 1) * 100%), transparent),
+      0 0 calc(48px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta) calc(var(--aether-neon, 1) * 30%),  transparent);
   }
 }
 
@@ -121,8 +121,8 @@
   0%, 100% { box-shadow: var(--rabble-glow-cyan-sm); }
   50%       {
     box-shadow:
-      0 0 calc(24px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan, #00f5ff) calc(var(--aether-neon, 1) * 100%), transparent),
-      0 0 calc(48px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan, #00f5ff) calc(var(--aether-neon, 1) * 30%),  transparent);
+      0 0 calc(24px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan) calc(var(--aether-neon, 1) * 100%), transparent),
+      0 0 calc(48px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan) calc(var(--aether-neon, 1) * 30%),  transparent);
   }
 }
 
@@ -130,8 +130,8 @@
   0%, 100% { box-shadow: var(--rabble-glow-violet-sm); }
   50%       {
     box-shadow:
-      0 0 calc(24px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet, #bf5fff) calc(var(--aether-neon, 1) * 100%), transparent),
-      0 0 calc(48px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet, #bf5fff) calc(var(--aether-neon, 1) * 30%),  transparent);
+      0 0 calc(24px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet) calc(var(--aether-neon, 1) * 100%), transparent),
+      0 0 calc(48px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet) calc(var(--aether-neon, 1) * 30%),  transparent);
   }
 }
 
@@ -144,14 +144,14 @@
   0%, 100% {
     transform: scale(1);
     box-shadow:
-      0 0 calc(30px  * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 100%), transparent),
-      0 0 calc(60px  * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet,  #bf5fff) calc(var(--aether-neon, 1) * 100%), transparent);
+      0 0 calc(30px  * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta) calc(var(--aether-neon, 1) * 100%), transparent),
+      0 0 calc(60px  * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet) calc(var(--aether-neon, 1) * 100%), transparent);
   }
   50% {
     transform: scale(1.06);
     box-shadow:
-      0 0 calc(50px  * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 100%), transparent),
-      0 0 calc(100px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet,  #bf5fff) calc(var(--aether-neon, 1) * 100%), transparent);
+      0 0 calc(50px  * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta) calc(var(--aether-neon, 1) * 100%), transparent),
+      0 0 calc(100px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet) calc(var(--aether-neon, 1) * 100%), transparent);
   }
 }
 
@@ -262,13 +262,13 @@
 @keyframes brand-glow {
   0%, 100% {
     text-shadow:
-      0 0 calc(14px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan,    #00f5ff) calc(var(--aether-neon, 1) * 50%), transparent),
-      0 0 calc(28px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan,    #00f5ff) calc(var(--aether-neon, 1) * 20%), transparent);
+      0 0 calc(14px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan) calc(var(--aether-neon, 1) * 50%), transparent),
+      0 0 calc(28px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan) calc(var(--aether-neon, 1) * 20%), transparent);
   }
   50% {
     text-shadow:
-      0 0 calc(14px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 50%), transparent),
-      0 0 calc(28px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 20%), transparent);
+      0 0 calc(14px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta) calc(var(--aether-neon, 1) * 50%), transparent),
+      0 0 calc(28px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta) calc(var(--aether-neon, 1) * 20%), transparent);
   }
 }
 
@@ -322,23 +322,23 @@
 @keyframes harmony-glow {
   0%   {
     box-shadow:
-      0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan,    #00f5ff) calc(var(--aether-neon, 1) * 35%), transparent),
-      inset 0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan,    #00f5ff) calc(var(--aether-neon, 1) * 8%), transparent);
+      0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan) calc(var(--aether-neon, 1) * 35%), transparent),
+      inset 0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan) calc(var(--aether-neon, 1) * 8%), transparent);
   }
   33%  {
     box-shadow:
-      0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet,  #bf5fff) calc(var(--aether-neon, 1) * 35%), transparent),
-      inset 0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet,  #bf5fff) calc(var(--aether-neon, 1) * 8%), transparent);
+      0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet) calc(var(--aether-neon, 1) * 35%), transparent),
+      inset 0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet) calc(var(--aether-neon, 1) * 8%), transparent);
   }
   66%  {
     box-shadow:
-      0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 35%), transparent),
-      inset 0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 8%), transparent);
+      0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta) calc(var(--aether-neon, 1) * 35%), transparent),
+      inset 0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta) calc(var(--aether-neon, 1) * 8%), transparent);
   }
   100% {
     box-shadow:
-      0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan,    #00f5ff) calc(var(--aether-neon, 1) * 35%), transparent),
-      inset 0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan,    #00f5ff) calc(var(--aether-neon, 1) * 8%), transparent);
+      0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan) calc(var(--aether-neon, 1) * 35%), transparent),
+      inset 0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan) calc(var(--aether-neon, 1) * 8%), transparent);
   }
 }
 
@@ -355,10 +355,10 @@
   bottom: 0;
   height: 1px;
   background-image: linear-gradient(90deg,
-    var(--rabble-cyan, #00f5ff),
-    var(--rabble-violet, #bf5fff),
-    var(--rabble-magenta, #ff2d78),
-    var(--rabble-cyan, #00f5ff));
+    var(--rabble-cyan),
+    var(--rabble-violet),
+    var(--rabble-magenta),
+    var(--rabble-cyan));
   background-size: 200% 100%;
   animation: harmony-scroll 9s linear infinite;
   opacity: 0.9;
@@ -381,13 +381,13 @@
   padding: 1px;
   background: conic-gradient(
     from var(--harmony-angle),
-    var(--rabble-cyan, #00f5ff),
-    var(--rabble-violet, #bf5fff),
-    var(--rabble-magenta, #ff2d78),
-    var(--rabble-cyan, #00f5ff));
+    var(--rabble-cyan),
+    var(--rabble-violet),
+    var(--rabble-magenta),
+    var(--rabble-cyan));
   animation: harmony-spin 9s linear infinite;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+  mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
@@ -396,3 +396,79 @@
 .rabble-border-harmony.slow::before { animation-duration: 12s; }
 .rabble-border-harmony.fast { animation-duration: 6s; }
 .rabble-border-harmony.fast::before { animation-duration: 6s; }
+
+/* ═══════════════════════════════════════════════════════════════
+   8. SIGIL STATES — generalized from rd2-sigil-pulse (dock source)
+   Used on any .rabble-sigil element (dock, entity indicators, etc.)
+   .is-thinking = 800ms · .is-speaking = 400ms
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes rabble-sigil-pulse {
+  from { opacity: 0.5; text-shadow: none; }
+  to   { opacity: 1;   text-shadow: 0 0 8px currentColor; }
+}
+
+.rabble-sigil {
+  font-family: var(--rabble-font-mono);
+  font-size: 13px;
+  color: var(--rabble-cyan);
+  flex-shrink: 0;
+  line-height: 1;
+  transition: color 150ms ease, text-shadow 150ms ease;
+}
+
+.rabble-sigil.is-thinking {
+  color: var(--rabble-violet);
+  animation: rabble-sigil-pulse 800ms ease infinite alternate;
+}
+
+.rabble-sigil.is-speaking {
+  color: var(--rabble-magenta);
+  animation: rabble-sigil-pulse 400ms ease infinite alternate;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   9. STAGGERED ENTRANCE — generalized from memberLineIn (panels source)
+   Apply .rabble-stagger-in to a container; children animate in with
+   :nth-child delays (80ms steps, up to 8 children by default).
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes rabble-stagger-line-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.rabble-stagger-in > * {
+  opacity: 0;
+  animation: rabble-stagger-line-in 300ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.rabble-stagger-in > *:nth-child(1) { animation-delay:   0ms; }
+.rabble-stagger-in > *:nth-child(2) { animation-delay:  80ms; }
+.rabble-stagger-in > *:nth-child(3) { animation-delay: 160ms; }
+.rabble-stagger-in > *:nth-child(4) { animation-delay: 240ms; }
+.rabble-stagger-in > *:nth-child(5) { animation-delay: 320ms; }
+.rabble-stagger-in > *:nth-child(6) { animation-delay: 400ms; }
+.rabble-stagger-in > *:nth-child(7) { animation-delay: 480ms; }
+.rabble-stagger-in > *:nth-child(8) { animation-delay: 560ms; }
+
+.rabble-stagger-in.fast > *:nth-child(1) { animation-delay:   0ms; }
+.rabble-stagger-in.fast > *:nth-child(2) { animation-delay:  40ms; }
+.rabble-stagger-in.fast > *:nth-child(3) { animation-delay:  80ms; }
+.rabble-stagger-in.fast > *:nth-child(4) { animation-delay: 120ms; }
+.rabble-stagger-in.fast > *:nth-child(5) { animation-delay: 160ms; }
+.rabble-stagger-in.fast > *:nth-child(6) { animation-delay: 200ms; }
+.rabble-stagger-in.fast > *:nth-child(7) { animation-delay: 240ms; }
+.rabble-stagger-in.fast > *:nth-child(8) { animation-delay: 280ms; }
+
+/* ═══════════════════════════════════════════════════════════════
+   10. GLITCH VEIL KEYFRAME — toggled by .rabble-glitch-veil.is-active
+   Class defined in rabble-components.css; keyframe lives here.
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes rabble-veil-stutter {
+  0%   { opacity: 0; transform: translateX(0); }
+  35%  { opacity: 0.9; transform: translateX(-6px); }
+  60%  { opacity: 0.25; transform: translateX(4px); }
+  100% { opacity: 0.7; transform: translateX(0); }
+}

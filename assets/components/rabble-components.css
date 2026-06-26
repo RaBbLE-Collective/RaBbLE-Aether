@@ -172,10 +172,10 @@ hr {
 .rabble-horizon,
 .horizon {
   position: fixed; left: 0; right: 0; top: 60%; height: 1px;
-  background: linear-gradient(90deg, transparent, var(--rabble-magenta, #ff2d78), transparent);
+  background: linear-gradient(90deg, transparent, var(--rabble-magenta), transparent);
   box-shadow:
-    0 0 calc(14px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 100%), transparent),
-    0 0 calc(28px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 40%),  transparent);
+    0 0 calc(14px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta) calc(var(--aether-neon, 1) * 100%), transparent),
+    0 0 calc(28px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta) calc(var(--aether-neon, 1) * 40%),  transparent);
   z-index: 1; pointer-events: none;
 }
 
@@ -205,7 +205,7 @@ hr {
 
 /* Animated holographic gradient text */
 .rabble-brand-text {
-  background: var(--rabble-gradient-holo, linear-gradient(90deg, #ff2d78, #00f5ff, #bf5fff, #ff2d78));
+  background: var(--rabble-gradient-holo);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -215,12 +215,12 @@ hr {
   font-weight: 800;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  filter: drop-shadow(0 0 calc(18px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 30%), transparent));
+  filter: drop-shadow(0 0 calc(18px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta) calc(var(--aether-neon, 1) * 30%), transparent));
 }
 
 /* Static two-color gradient text */
 .rabble-brand-text-2 {
-  background: var(--rabble-gradient-scan, linear-gradient(90deg, #ff2d78, #00f5ff));
+  background: var(--rabble-gradient-scan);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -259,8 +259,8 @@ hr {
 .rabble-btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   padding: 12px 24px;
-  background: var(--rabble-gradient-primary, linear-gradient(135deg, #ff2d78, #bf5fff));
-  color: #fff;
+  background: var(--rabble-gradient-primary);
+  color: white;
   border: none;
   border-radius: var(--rabble-radius-md, 8px);
   cursor: pointer;
@@ -270,7 +270,7 @@ hr {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
-  box-shadow: 0 0 calc(20px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 25%), transparent);
+  box-shadow: 0 0 calc(20px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta) calc(var(--aether-neon, 1) * 25%), transparent);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
   position: relative;
   overflow: hidden;
@@ -285,8 +285,8 @@ hr {
 
 .rabble-btn:hover {
   box-shadow:
-    0 0 calc(32px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 45%), transparent),
-    0 0 calc(60px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet,  #bf5fff) calc(var(--aether-neon, 1) * 20%), transparent);
+    0 0 calc(32px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta) calc(var(--aether-neon, 1) * 45%), transparent),
+    0 0 calc(60px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet) calc(var(--aether-neon, 1) * 20%), transparent);
   transform: translateY(-2px);
 }
 
@@ -294,7 +294,7 @@ hr {
 
 .rabble-btn:active {
   transform: translateY(0);
-  box-shadow: 0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 30%), transparent);
+  box-shadow: 0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta) calc(var(--aether-neon, 1) * 30%), transparent);
 }
 
 .rabble-btn:focus-visible {
@@ -313,18 +313,18 @@ hr {
 .rabble-btn-ghost:hover {
   background: rgba(191,95,255,0.12);
   border-color: rgba(191,95,255,0.4);
-  box-shadow: 0 0 calc(14px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet, #bf5fff) calc(var(--aether-neon, 1) * 20%), transparent);
+  box-shadow: 0 0 calc(14px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet) calc(var(--aether-neon, 1) * 20%), transparent);
   transform: translateY(-1px);
 }
 
 /* Cyan variant */
 .rabble-btn-cyan {
-  background: linear-gradient(135deg, var(--rabble-cyan, #00f5ff), var(--rabble-violet, #bf5fff));
-  box-shadow: 0 0 calc(20px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan, #00f5ff) calc(var(--aether-neon, 1) * 20%), transparent);
+  background: linear-gradient(135deg, var(--rabble-cyan) 0%, var(--rabble-violet) 100%);
+  box-shadow: 0 0 calc(20px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan) calc(var(--aether-neon, 1) * 20%), transparent);
 }
 
 .rabble-btn-cyan:hover {
-  box-shadow: 0 0 calc(32px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan, #00f5ff) calc(var(--aether-neon, 1) * 45%), transparent);
+  box-shadow: 0 0 calc(32px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan) calc(var(--aether-neon, 1) * 45%), transparent);
 }
 
 /* Size modifiers */
@@ -348,7 +348,7 @@ hr {
 .rabble-card::before {
   content: '';
   position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: var(--rabble-gradient-scan, linear-gradient(90deg, #ff2d78, #00f5ff));
+  background: var(--rabble-gradient-scan);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
@@ -442,10 +442,10 @@ hr {
 
 .rabble-progress-fill {
   height: 100%;
-  background: var(--rabble-gradient-primary, linear-gradient(90deg, #ff2d78, #bf5fff));
+  background: var(--rabble-gradient-primary);
   border-radius: var(--rabble-radius-pill);
   transition: width 0.4s ease;
-  box-shadow: 0 0 calc(8px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta, #ff2d78) calc(var(--aether-neon, 1) * 50%), transparent);
+  box-shadow: 0 0 calc(8px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta) calc(var(--aether-neon, 1) * 50%), transparent);
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -518,7 +518,7 @@ hr {
 .rabble-nav::after {
   content: '';
   position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
-  background: var(--rabble-gradient-scan, linear-gradient(90deg, #ff2d78, #00f5ff));
+  background: var(--rabble-gradient-scan);
   opacity: 0.4;
 }
 
@@ -557,10 +557,10 @@ hr {
   padding-top: env(safe-area-inset-top, 0px);
   background: rgba(3, 0, 11, 0.88);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--rabble-border, #2a2840);
+  border-bottom: 1px solid var(--rabble-border);
   font-family: var(--rabble-font-mono);
   font-size: 11px;
-  color: var(--rabble-muted, #6b6880);
+  color: var(--rabble-muted);
   letter-spacing: 0.06em;
   position: relative;
   overflow: hidden;
@@ -596,31 +596,31 @@ hr {
   font-size: 11px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--rabble-text, #e8e6f0);
+  color: var(--rabble-text);
 }
 
-.sb-sep      { color: var(--rabble-border, #2a2840); }
+.sb-sep      { color: var(--rabble-border); }
 .sb-workspace { letter-spacing: 0.08em; }
-.sb-val      { color: var(--rabble-text, #e8e6f0); }
+.sb-val      { color: var(--rabble-text); }
 
 .sb-glyph {
-  color: var(--rabble-violet, #bf5fff);
+  color: var(--rabble-violet);
   font-size: 12px;
-  text-shadow: 0 0 6px var(--rabble-violet, #bf5fff);
+  text-shadow: 0 0 6px var(--rabble-violet);
 }
 
 .sb-entity-state {
-  color: var(--rabble-cyan, #00f5ff);
-  text-shadow: 0 0 4px var(--rabble-cyan, #00f5ff);
+  color: var(--rabble-cyan);
+  text-shadow: 0 0 4px var(--rabble-cyan);
   text-transform: uppercase;
   font-size: 10px;
   letter-spacing: 0.18em;
 }
 
-.sb-pulse         { color: var(--rabble-muted, #6b6880); font-size: 10px; }
-.sb-pulse .sb-val { color: var(--rabble-cyan, #00f5ff); text-shadow: 0 0 4px var(--rabble-cyan, #00f5ff); }
-.sb-uptime        { color: var(--rabble-muted, #6b6880); }
-.sb-uptime .sb-val { color: var(--rabble-magenta, #ff2d78); }
+.sb-pulse         { color: var(--rabble-muted); font-size: 10px; }
+.sb-pulse .sb-val { color: var(--rabble-cyan); text-shadow: 0 0 4px var(--rabble-cyan); }
+.sb-uptime        { color: var(--rabble-muted); }
+.sb-uptime .sb-val { color: var(--rabble-magenta); }
 
 @media (max-width: 700px) { .sb-hide-sm { display: none; } }
 @media (max-width: 400px) { .sb-hide-xs { display: none; } }
@@ -629,15 +629,15 @@ hr {
 .pill {
   display: inline-flex; align-items: center; gap: 6px;
   padding: 2px 10px; border-radius: 999px;
-  border: 1px solid var(--rabble-green, #50fa7b);
-  color: var(--rabble-green, #50fa7b);
+  border: 1px solid var(--rabble-green);
+  color: var(--rabble-green);
   font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
-  box-shadow: 0 0 6px var(--rabble-green, #50fa7b);
+  box-shadow: 0 0 6px var(--rabble-green);
 }
 .pill .dot {
   width: 5px; height: 5px; border-radius: 50%;
-  background: var(--rabble-green, #50fa7b);
-  box-shadow: 0 0 6px var(--rabble-green, #50fa7b);
+  background: var(--rabble-green);
+  box-shadow: 0 0 6px var(--rabble-green);
   animation: pulse-dot 2s ease-in-out infinite;
 }
 @keyframes pulse-dot { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
@@ -650,7 +650,7 @@ hr {
   font-family: var(--rabble-font-mono);
   font-size: 12px; line-height: 1.8;
   color: var(--rabble-text);
-  background: var(--rabble-void, #03000b);
+  background: var(--rabble-void);
   padding: 16px;
   border: 1px solid var(--rabble-border);
   border-radius: var(--rabble-radius-md, 8px);
@@ -872,13 +872,13 @@ hr {
   padding: var(--wm-ring-width);
   background: conic-gradient(
     from var(--harmony-angle),
-    var(--rabble-cyan,    #00f5ff)  0%,
-    var(--rabble-magenta, #ff2d78) 45%,
-    var(--rabble-violet,  #bf5fff) 68%,
-    var(--rabble-cyan,    #00f5ff) 100%
+    var(--rabble-cyan)  0%,
+    var(--rabble-magenta) 45%,
+    var(--rabble-violet) 68%,
+    var(--rabble-cyan) 100%
   );
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+  mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   animation: harmony-spin var(--wm-chase-dur) linear infinite;
@@ -904,4 +904,655 @@ hr {
   .applet           { box-shadow: none; border-radius: 0; }
   .applet.wm-active { box-shadow: none; }
   :root             { --wm-gap: 0px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   16. CANONICAL FRAMEWORK COMPONENTS — .rabble-* roster
+   Harvested from World (RaBbLE-panels.css, RaBbLE-dock.css,
+   RaBbLE-account.css) + Chrysalis ep1 (RaBbLE-liminal.css,
+   RaBbLE-landing-login.css, RaBbLE-landing-stage.css).
+   Legacy rc- and rd2- aliases at the bottom of this file.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── .rabble-panel — glass surface + flowing border ring ─────────
+   Glass container. Always pair with .rabble-border-harmony for the
+   conic-gradient ring. Successor to World .rc-panel.             */
+.rabble-panel,
+.rc-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--rabble-space-2);
+  padding: var(--rabble-space-4);
+  background: var(--rabble-glass-78);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: var(--rabble-radius-md);
+  /* Dual-accent atmospheric glow; flowing ring via .rabble-border-harmony */
+  box-shadow:
+    0 0 28px color-mix(in srgb, var(--rabble-magenta) 5%, transparent),
+    0 0 28px color-mix(in srgb, var(--rabble-cyan) 5%, transparent);
+}
+
+.rabble-panel + .rabble-panel,
+.rc-panel + .rc-panel {
+  margin-top: var(--rabble-space-4);
+}
+
+/* ── .rabble-section-header — pairs with .rabble-harmony-line ────
+   Cyan monospace eyebrow; insert .rabble-harmony-line after it.   */
+.rabble-section-header {
+  font-family: var(--rabble-font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rabble-cyan);
+  text-shadow: 0 0 6px color-mix(in srgb, var(--rabble-cyan) 50%, transparent);
+  padding-bottom: var(--rabble-space-2);
+  margin-bottom: var(--rabble-space-2);
+}
+
+/* ── .rabble-card — member / collective card with accent stripe ───
+   --rabble-accent controls the left stripe + hover glow color.
+   Variants: .is-flat (no elevation), .is-raised (extra lift),
+   .is-active (accent tinted bg). Consolidates .rc-member-card +
+   .rc-collective-card.                                            */
+.rabble-card {
+  position: relative;
+  background: var(--rabble-glass-78);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: var(--rabble-radius-lg);
+  border: 1px solid var(--rabble-border);
+  border-left: 3px solid var(--rabble-accent);
+  overflow: hidden;
+  transition:
+    box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1),
+    background 300ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rabble-card:hover {
+  box-shadow: 0 0 24px color-mix(in srgb, var(--rabble-accent) 20%, transparent);
+}
+
+.rabble-card.is-flat {
+  box-shadow: none;
+  background: color-mix(in srgb, var(--rabble-surface) 60%, transparent);
+}
+
+.rabble-card.is-raised {
+  box-shadow:
+    0 8px 32px color-mix(in srgb, var(--rabble-void) 40%, transparent),
+    0 0 16px color-mix(in srgb, var(--rabble-accent) 12%, transparent);
+}
+
+.rabble-card.is-active {
+  background: color-mix(in srgb, var(--rabble-accent) 8%, var(--rabble-surface));
+  box-shadow: 0 0 26px color-mix(in srgb, var(--rabble-accent) 24%, transparent);
+  border-left-color: var(--rabble-accent);
+}
+
+/* Accent shortcut modifiers — set the accent token for the card */
+.rabble-accent-magenta { --rabble-accent: var(--rabble-magenta); }
+.rabble-accent-cyan    { --rabble-accent: var(--rabble-cyan); }
+.rabble-accent-violet  { --rabble-accent: var(--rabble-violet); }
+.rabble-accent-pink    { --rabble-accent: var(--rabble-pink); }
+.rabble-accent-green   { --rabble-accent: var(--rabble-green); }
+.rabble-accent-yellow  { --rabble-accent: var(--rabble-yellow); }
+.rabble-accent-red     { --rabble-accent: var(--rabble-red); }
+
+/* ── .rabble-btn extensions ──────────────────────────────────────
+   Pill variant + .is-secondary (muted/ghost).
+   Active state corrected to translateY(1px) per spec.
+   Base .rabble-btn is in section 4; these extend it.            */
+.rabble-btn {
+  /* Ensure appearance:none is explicit (needed for <button> elements) */
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.rabble-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta) calc(var(--aether-neon, 1) * 30%), transparent);
+}
+
+.rabble-btn-pill {
+  border-radius: var(--rabble-radius-pill);
+}
+
+.rabble-btn.is-secondary,
+.rabble-btn.secondary {
+  background: color-mix(in srgb, var(--rabble-surface) 80%, transparent);
+  color: var(--rabble-muted);
+  box-shadow: none;
+  border: 1px solid var(--rabble-border);
+}
+
+.rabble-btn.is-secondary:hover,
+.rabble-btn.secondary:hover {
+  background: color-mix(in srgb, var(--rabble-accent) 12%, transparent);
+  border-color: color-mix(in srgb, var(--rabble-accent) 40%, transparent);
+  color: var(--rabble-text);
+  box-shadow: 0 0 calc(14px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-accent) 20%, transparent);
+  transform: translateY(-1px);
+}
+
+/* ── .rabble-badge — inline status pill ──────────────────────────
+   Accent via --rabble-accent (override inline or via .rabble-accent-*).
+   Consolidates .rc-badge + .rd2-live-badge.                      */
+.rabble-badge,
+.rc-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 7px;
+  border-radius: var(--rabble-radius-pill);
+  border: 1px solid var(--rabble-accent);
+  background: color-mix(in srgb, var(--rabble-accent) 12%, transparent);
+  color: var(--rabble-accent);
+  font-family: var(--rabble-font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  line-height: 1.6;
+}
+
+/* ── .rabble-stat-row — label : value data pair ──────────────────
+   Flex space-between. Mono for both label and value.
+   Consolidates .rc-stat-row + .rc-stat-row__label/__value.       */
+.rabble-stat-row,
+.rc-stat-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--rabble-space-4);
+  padding: var(--rabble-space-1) 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--rabble-border) 60%, transparent);
+}
+
+.rabble-stat-row:last-child,
+.rc-stat-row:last-child {
+  border-bottom: none;
+}
+
+.rabble-stat-row-label,
+.rc-stat-row__label {
+  font-family: var(--rabble-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--rabble-muted);
+  flex-shrink: 0;
+}
+
+.rabble-stat-row-value,
+.rc-stat-row__value {
+  font-family: var(--rabble-font-mono);
+  font-size: 13px;
+  color: var(--rabble-text);
+  text-align: right;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── .rabble-statusbar — 3-zone waybar layout ────────────────────
+   Grid: left zone · center zone · right zone.
+   Harvested from Chrysalis ep1 landing-shell.css .statusbar.
+   .rabble-statusbar-zone for each column.                         */
+.rabble-statusbar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: end;
+  padding-top: env(safe-area-inset-top, 0px);
+  background: color-mix(in srgb, var(--rabble-void) 88%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--rabble-border);
+  font-family: var(--rabble-font-mono);
+  font-size: 11px;
+  color: var(--rabble-muted);
+  letter-spacing: 0.06em;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.rabble-statusbar-zone {
+  display: flex;
+  align-items: center;
+  padding: 0 16px 6px;
+  gap: 10px;
+}
+
+/* First zone: left-aligned */
+.rabble-statusbar-zone:first-child { justify-content: flex-start; }
+/* Third zone: right-aligned with wider gap */
+.rabble-statusbar-zone:last-child  { justify-content: flex-end; gap: 14px; }
+/* Center zone: centered, interactive */
+.rabble-statusbar-zone:nth-child(2) {
+  justify-content: center;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  border-radius: var(--rabble-radius-sm);
+  transition: background 150ms ease;
+}
+.rabble-statusbar-zone:nth-child(2):hover {
+  background: color-mix(in srgb, var(--rabble-violet) 7%, transparent);
+}
+
+/* ── .rabble-dock — bar ↔ expanded pane ──────────────────────────
+   Bar mode: 48px. .is-open expands to 65vh.
+   Visual CSS only — JS state glue stays in World.
+   Consolidates .rd2-* family from World RaBbLE-dock.css.         */
+.rabble-dock {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 48px;
+  max-height: 48px;
+  overflow: hidden;
+  transition: max-height 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  background: var(--rabble-glass-80);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-top: 1px solid var(--rabble-border);
+}
+
+.rabble-dock.is-open {
+  max-height: 65vh;
+}
+
+/* Dock item row — the slim bar strip */
+.rabble-dock-item {
+  display: flex;
+  align-items: center;
+  gap: var(--rabble-space-2);
+  min-height: 48px;
+  padding: 0 var(--rabble-space-4);
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .rabble-dock      { min-height: 44px; max-height: 44px; }
+  .rabble-dock.is-open { max-height: 72vh; }
+  .rabble-dock-item { min-height: 44px; padding: 0 var(--rabble-space-2); }
+}
+
+/* ── .rabble-log — scrollable transmission history ───────────────
+   Monospace line feed; colored by line role via .is-user/.is-entity/.is-system.
+   Consolidates .rd2-history + .rd2-line* from World RaBbLE-dock.css. */
+.rabble-log {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: var(--rabble-space-2) var(--rabble-space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--rabble-space-2);
+  scroll-behavior: smooth;
+  font-family: var(--rabble-font-mono);
+}
+
+.rabble-log-line {
+  font-family: var(--rabble-font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--rabble-text);
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  animation: rabble-log-in 0.15s ease forwards;
+}
+
+/* .rabble-log-who — role sigil inside a line (◈ RABBLE, ▸ USER) */
+.rabble-log-line .rabble-log-who {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-right: 2px;
+}
+
+/* Entity voice */
+.rabble-log-line.is-entity .rabble-log-who { color: var(--rabble-magenta); }
+
+/* System voice */
+.rabble-log-line.is-system {
+  color: var(--rabble-muted);
+  font-style: italic;
+}
+.rabble-log-line.is-system .rabble-log-who { color: var(--rabble-muted); }
+
+/* User voice — right-side bubble */
+.rabble-log-line.is-user {
+  align-self: flex-end;
+  max-width: 88%;
+  color: var(--rabble-cyan);
+  border: 1px solid color-mix(in srgb, var(--rabble-cyan) 35%, transparent);
+  border-radius: 8px 8px 2px 8px;
+  padding: 5px 9px;
+  background: color-mix(in srgb, var(--rabble-cyan) 6%, transparent);
+}
+
+/* Scrollbar for log */
+.rabble-log::-webkit-scrollbar       { width: 4px; }
+.rabble-log::-webkit-scrollbar-track { background: transparent; }
+.rabble-log::-webkit-scrollbar-thumb { background: var(--rabble-border); border-radius: 2px; }
+.rabble-log::-webkit-scrollbar-thumb:hover { background: var(--rabble-muted); }
+
+/* ── .rabble-transmission — single-line truncating output ─────────
+   Bar-mode dock line. Full text on title attr hover.
+   Consolidates .rd2-transmission from World RaBbLE-dock.css.     */
+.rabble-transmission,
+.rd2-transmission {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--rabble-font-mono);
+  font-size: 13px;
+  color: var(--rabble-text);
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── .rabble-chat — void bubbles + ask-box ───────────────────────
+   Chat container; .rabble-chat-bubble for individual messages;
+   .rabble-askbox + .rabble-askbox-input for the ask row.
+   Consolidates dock .rd2-input* + Chrysalis .void-chat/.ask-box.  */
+.rabble-chat {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  overflow: hidden;
+}
+
+.rabble-chat-bubble {
+  max-width: 82%;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-family: var(--rabble-font-mono);
+  font-size: 12px;
+  line-height: 1.55;
+  word-break: break-word;
+}
+
+.rabble-chat-bubble.is-user {
+  align-self: flex-end;
+  background: color-mix(in srgb, var(--rabble-accent) 10%, transparent);
+  border: 1px solid var(--rabble-accent);
+  color: var(--rabble-text);
+  border-bottom-right-radius: 3px;
+}
+
+.rabble-chat-bubble.is-entity {
+  align-self: flex-start;
+  background: color-mix(in srgb, var(--rabble-cyan) 7%, transparent);
+  border: 1px solid var(--rabble-cyan);
+  color: var(--rabble-cyan);
+  text-shadow: 0 0 4px color-mix(in srgb, var(--rabble-cyan) 25%, transparent);
+  border-bottom-left-radius: 3px;
+}
+
+@keyframes void-msg-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Ask-box container — wraps label + input row */
+.rabble-askbox {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Ask-box input row — accent-bordered field + send button */
+.rabble-askbox-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: color-mix(in srgb, var(--rabble-surface) 75%, transparent);
+  border: 1px solid var(--rabble-border);
+  border-radius: var(--rabble-radius-md);
+  padding: 10px 14px;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.rabble-askbox-input:focus-within {
+  border-color: var(--rabble-accent);
+  box-shadow:
+    0 0 18px color-mix(in srgb, var(--rabble-accent) 25%, transparent),
+    inset 0 0 12px color-mix(in srgb, var(--rabble-accent) 5%, transparent);
+}
+
+/* Bare text input inside an askbox */
+.rabble-askbox-input input,
+.rabble-askbox-input textarea {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--rabble-font-mono);
+  font-size: 14px;
+  color: var(--rabble-text);
+  caret-color: var(--rabble-accent);
+  letter-spacing: 0.04em;
+}
+.rabble-askbox-input input::placeholder,
+.rabble-askbox-input textarea::placeholder { color: var(--rabble-muted); }
+
+/* ── .rabble-overlay — modal / overlay family ────────────────────
+   Base: full-screen glass backdrop. Variants via extra class:
+   -login (centered login panel), -nav (full-screen nav),
+   -log (full-height log surface), -ios (bottom-anchored install prompt).
+   Consolidates World RaBbLE-account.css + Chrysalis landing-login.css. */
+.rabble-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--rabble-void) 88%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Login modal panel (child inside .rabble-overlay) */
+.rabble-overlay-login {
+  width: min(440px, 92vw);
+  background: color-mix(in srgb, var(--rabble-bg) 95%, transparent);
+  border: 1px solid var(--rabble-accent);
+  border-radius: var(--rabble-radius-md);
+  box-shadow:
+    0 0 28px var(--rabble-accent),
+    0 0 64px color-mix(in srgb, var(--rabble-accent) 25%, transparent);
+  overflow: hidden;
+  animation: modal-in 280ms cubic-bezier(0.2, 0.9, 0.2, 1) both;
+}
+
+/* Full-screen navigation overlay */
+.rabble-overlay-nav {
+  align-items: flex-start;
+  padding: var(--rabble-space-7);
+}
+
+/* Full-height scrollable log overlay */
+.rabble-overlay-log {
+  align-items: stretch;
+  padding: 0;
+}
+
+/* iOS install prompt — anchors to bottom */
+.rabble-overlay-ios {
+  align-items: flex-end;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  padding-left: var(--rabble-space-4);
+  padding-right: var(--rabble-space-4);
+}
+
+/* ── .rabble-whisper — hover descriptor card ─────────────────────
+   Fixed right-side tooltip; revealed on hover via .is-active.
+   Consolidates Chrysalis ep1 RaBbLE-liminal.css .whisper.         */
+.rabble-whisper {
+  position: fixed;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%) translateX(10px);
+  z-index: 50;
+  width: min(310px, 78vw);
+  padding: 14px 16px;
+  border: 1px solid var(--rabble-border);
+  border-left: 2px solid var(--rabble-accent);
+  border-radius: var(--rabble-radius-md);
+  background: color-mix(in srgb, var(--rabble-surface) 88%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  pointer-events: none;
+  font-family: var(--rabble-font-mono);
+}
+
+.rabble-whisper.is-active {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+.rabble-whisper-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-family: var(--rabble-font-mono);
+  margin-bottom: 6px;
+}
+
+.rabble-whisper-glyph {
+  font-size: 15px;
+  color: var(--rabble-accent);
+  text-shadow: 0 0 8px var(--rabble-accent);
+}
+
+.rabble-whisper-name {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--rabble-text);
+}
+
+.rabble-whisper-body {
+  font-size: 11px;
+  line-height: 1.65;
+  color: var(--rabble-muted);
+}
+
+/* ── .rabble-rail — progress rail ────────────────────────────────
+   2px height top bar. .rabble-rail-fill width controlled by JS.
+   Consolidates World RaBbLE-unified.css #progress-rail/.rail-fill. */
+.rabble-rail {
+  height: 2px;
+  background: var(--rabble-border);
+  overflow: hidden;
+  position: relative;
+}
+
+.rabble-rail-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--rabble-magenta) 0%, var(--rabble-cyan) 100%);
+  transition: width 500ms cubic-bezier(0.16, 1, 0.3, 1);
+  width: 0%;
+  box-shadow: 0 0 calc(8px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta) 50%, transparent);
+}
+
+/* ── .rabble-glitch-veil — CSS glitch layer ──────────────────────
+   Toggle .is-active to trigger glitch animation.
+   Keyframe rabble-veil-stutter lives in rabble-motion.css.
+   Consolidates Chrysalis ep1 RaBbLE-liminal.css .glitch-veil.    */
+.rabble-glitch-veil {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(
+    105deg,
+    color-mix(in srgb, var(--rabble-magenta) 10%, transparent) 0%,
+    transparent 30%,
+    transparent 64%,
+    color-mix(in srgb, var(--rabble-cyan) 9%, transparent) 100%
+  );
+  mix-blend-mode: screen;
+}
+
+.rabble-glitch-veil.is-active {
+  display: block;
+  animation: rabble-veil-stutter 0.42s steps(2, jump-none) infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   === LEGACY ALIASES — remove after World P4 reassembly ===
+   Token aliases map --rc-* to --rabble-* so existing World pages
+   that use World's unified.css rc-* tokens continue to resolve
+   even when loaded without World/unified.css.
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Surface */
+  --rc-void:        var(--rabble-void);
+  --rc-surface:     var(--rabble-surface);
+  --rc-raised:      var(--rabble-raised);
+  --rc-border:      var(--rabble-border);
+
+  /* Text */
+  --rc-text:        var(--rabble-text);
+  --rc-muted:       var(--rabble-muted);
+
+  /* Accent palette */
+  --rc-accent-m:    var(--rabble-magenta);
+  --rc-accent-c:    var(--rabble-cyan);
+  --rc-accent-v:    var(--rabble-violet);
+  --rc-accent-p:    var(--rabble-pink);
+  --rc-accent-g:    var(--rabble-green);
+  --rc-accent-y:    var(--rabble-yellow);
+  --rc-accent-r:    var(--rabble-red);
+
+  /* Glass recipe */
+  --rc-glass-80:    var(--rabble-glass-80);
+  --rc-glass-78:    var(--rabble-glass-78);
+  --rc-blur:        blur(5px);
+  --rc-blur-light:  blur(3px);
+
+  /* Typography */
+  --rc-font-mono:   var(--rabble-font-mono);
+  --rc-font-ui:     var(--rabble-font-ui);
+  --rc-size-xs:     11px;
+  --rc-size-sm:     13px;
+  --rc-size-md:     15px;
+  --rc-size-lg:     18px;
+  --rc-size-xl:     24px;
+  --rc-size-2xl:    32px;
+
+  /* Spacing */
+  --rc-gap-xs:      4px;
+  --rc-gap-sm:      8px;
+  --rc-gap-md:      16px;
+  --rc-gap-lg:      24px;
+  --rc-gap-xl:      40px;
+
+  /* Transition */
+  --rc-ease:        cubic-bezier(0.16, 1, 0.3, 1);
+  --rc-dur-fast:    150ms;
+  --rc-dur-mid:     300ms;
+  --rc-dur-slow:    500ms;
+
+  /* Z-layers */
+  --rc-z-floor:     0;
+  --rc-z-panels:    10;
+  --rc-z-entity:    20;
+  --rc-z-dock:      30;
+  --rc-z-rail:      40;
+  --rc-z-overlay:   50;
 }
