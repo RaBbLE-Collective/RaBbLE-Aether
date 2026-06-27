@@ -415,6 +415,8 @@
   flex-shrink: 0;
   line-height: 1;
   transition: color 150ms ease, text-shadow 150ms ease;
+  /* Calm idle breathe — overridden by .is-thinking / .is-speaking below */
+  animation: rabble-sigil-breathe 4s ease-in-out infinite;
 }
 
 .rabble-sigil.is-thinking {
@@ -471,4 +473,49 @@
   35%  { opacity: 0.9; transform: translateX(-6px); }
   60%  { opacity: 0.25; transform: translateX(4px); }
   100% { opacity: 0.7; transform: translateX(0); }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   11. CHROMATIC TEXT SHUDDER — generalized from word-shudder
+   (Chrysalis ep1 RaBbLE-liminal.css:440 word-shudder).
+   Toggled by .rabble-text-shudder.is-active in components.
+   RGB-split: cyan one way, magenta the other, violet bloom.
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes rabble-text-shudder {
+  0%   {
+    text-shadow:
+      -3px 0 var(--rabble-cyan),
+       3px 0 var(--rabble-magenta),
+       0 0 60px var(--rabble-violet);
+  }
+  100% {
+    text-shadow:
+       3px 0 var(--rabble-cyan),
+      -3px 0 var(--rabble-magenta),
+       0 0 60px var(--rabble-violet);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   12. 3D PERSPECTIVE REVEAL — generalized from gv-reader-page-in
+   (Chrysalis ep1 RaBbLE-Grimoire.css:119 gv-reader-page-in).
+   Card/page entrance flip on the Y axis.
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes rabble-reveal-3d {
+  from { opacity: 0; transform: perspective(800px) rotateY(-22deg); }
+  to   { opacity: 1; transform: perspective(800px) rotateY(0); }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   13. SIGIL BREATHE — calm idle pulse for .rabble-sigil default state
+   (Chrysalis ep1 RaBbLE-liminal.css:103 lsb-breathe — opacity breathe).
+   Gentle + slow so the resting sigil feels alive; .is-thinking /
+   .is-speaking override the animation entirely (higher specificity).
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes rabble-sigil-breathe {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.55; }
 }
