@@ -32,15 +32,19 @@ A single source for all visual tokens, animations, component classes, and SVG as
 
 | Path | What |
 |---|---|
-| `src/assets/palette.entry.css` | esbuild entry point — imports palette → motion → components |
+| `src/entry.css` | esbuild entry point — imports fonts → base → palette → motion → components → theme (5 bundled CSS files, in that order) |
+| `assets/base/rabble-base.css` | Base layer — resets, html/body defaults, prose elements, brand typography |
 | `assets/palette/rabble-palette.css` | All `--rabble-*` design tokens |
 | `assets/motion/rabble-motion.css` | `@keyframes`, `@property`, animation utility classes |
 | `assets/components/rabble-components.css` | Full component library (buttons, cards, applet tiles, etc.) |
-| `dist/aether.css` | Dev build (built by `build:watch` — what HTML pages link to) |
-| `dist/aether.min.css` | Production build (built by `npm run build` — CDN deploy only) |
+| `assets/theme/rabble-theme.css` | Theme variants (e.g. `[data-aether="muted"]` low-glow preset) — requires palette loaded first |
+| `dist/aether.css` | Dev build (built by `build:dev`/`build:watch` — what HTML pages link to) |
+| `dist/aether.min.css` | Production build (built by `npm run build` — CDN/Workers deploy target) |
 | `assets/logos/` | SVG assets |
 | `assets/entity/` | Entity visual reference images (doc-compare, reference) |
 | `RaBbLE-Entity-Visual-Spec.md` | Canonical entity visual identity spec |
+
+**Not yet reflected here (deferred, see audit):** `rabble.css` (root) is a second, hand-maintained entry point that drifts from `src/entry.css`; `assets/palette/` also carries `.json`/`.scss` mirrors of the token source.
 
 ## Build Scripts
 
@@ -62,7 +66,7 @@ npm run build                              # production build → dist/aether.mi
 | esbuild build system | **Done** — `npm run build`, `build:dev`, `build:watch` |
 | CDN delivery via dev-serve.sh | **Done** — all World pages loading from `/aether/v0.0.0.0/aether.css` |
 | Portal glyph SVG | **Done** — `assets/logos/rabble-portal-glyphs.svg` |
-| Production deploy to Cloudflare R2 | **Pending** — `joinrabble.world` still on pre-refactor code |
+| Production deploy to Cloudflare Workers | **Live** — `.github/workflows/deploy.yml` (`npm run build` → `npx wrangler deploy`, triggers on push to `main` or `v*` tags) + `wrangler.jsonc` (Workers static-assets site `rabble-aether`, serves `dist/`). Verified serving 2026-07-05: `https://aether.joinrabble.world/aether.min.css` returns 200. **Caveat:** the live bundle is smaller/older than the current `dist/aether.min.css` on this branch — `main` doesn't yet have this workflow/wrangler pair (all deploy work is on `new-horizons`), so the trigger conditions haven't fired against current source; the live artifact likely came from a manual `wrangler deploy` or an older `main` state. Not R2 — that was superseded by the Workers migration (see commit history on `deploy.yml`/`wrangler.jsonc`). |
 | Cache-busting strategy for version bumps | **Pending** |
 | `prefers-reduced-motion` on harmony animations | **Pending** |
 | Entity visual spec + reference images | **Done** — `RaBbLE-Entity-Visual-Spec.md`, `assets/entity/` |
