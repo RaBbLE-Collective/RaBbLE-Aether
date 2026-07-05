@@ -17,7 +17,7 @@ Every RaBbLE surface — NeBuLA, World, OS, BaBbLE — derives from Aether. Cons
 ### As a CDN Link (Recommended)
 
 ```html
-<link rel="stylesheet" href="https://cdn.joinrabble.world/aether/v0.0.0.1-rc.1/aether.min.css">
+<link rel="stylesheet" href="https://aether.joinrabble.world/v0.0.0.1-rc.1/aether.min.css">
 ```
 
 Or load via JavaScript loader (see `src/entry.css` for the pattern):
@@ -188,7 +188,7 @@ Aether deploys to Cloudflare R2 CDN on git tag:
 git tag v0.0.0.1-rc.1
 git push --tags
 # GitHub Actions builds and uploads to:
-# https://cdn.joinrabble.world/aether/v0.0.0.1-rc.1/aether.min.css
+# https://aether.joinrabble.world/v0.0.0.1-rc.1/aether.min.css
 ```
 
 See [EP1-DEPLOYMENT-RUNBOOK.md](../EP1-DEPLOYMENT-RUNBOOK.md) for full CI/CD setup.
