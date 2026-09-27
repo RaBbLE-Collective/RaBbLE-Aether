@@ -413,9 +413,11 @@ toolbarbutton.bookmark-item:hover,
 
 /* ── 9. Context menus ───────────────────────────────────────────── */
 menupopup {
-  --panel-background:   var(--ra-raised) !important;
-  --panel-color:        var(--ra-text) !important;
-  --panel-border-color: var(--ra-border) !important;
+  /* Firefox 153 paints popups on a shadow ::part(content) that userChrome's
+   * own ::part() rules can't reach — only these inherited vars get in. */
+  --panel-background-color: var(--ra-raised) !important;
+  --panel-text-color:       var(--ra-text) !important;
+  --panel-border-color:     var(--ra-border) !important;
   background-color: var(--ra-raised) !important;
   border:           1px solid rgba(255,45,120,0.30) !important;
   border-radius:    8px !important;
@@ -440,6 +442,38 @@ menuseparator {
   border-top: 1px solid var(--ra-border) !important;
   margin-block: 4px !important; margin-inline: 8px !important;
 }
+
+/* ── 9b. Form <select> dropdowns ────────────────────────────────── */
+/* The open list of a web page's <select> is a chrome-side menupopup
+ * (SelectParent.sys.mjs). When the page styles its select, Firefox sets
+ * [customoptionstyling] and paints the list as -moz-combobox (GTK system
+ * color: white here) under --content-select-background-image (the page's
+ * select color), with the page's text color in inline --panel-text-color.
+ * Our light menuitem text then sat on white. userChrome ::part() rules don't
+ * match these shadow parts, so every layer is pinned via host variables. */
+#ContentSelectDropdown > menupopup {
+  --panel-background-color:          var(--ra-raised) !important;
+  --panel-text-color:                var(--ra-text) !important;
+  --content-select-background-image: linear-gradient(var(--ra-raised), var(--ra-raised)) !important;
+}
+#ContentSelectDropdown menuitem,
+#ContentSelectDropdown menucaption {
+  background-color: transparent !important;
+  color:            var(--ra-text) !important;
+}
+#ContentSelectDropdown menucaption {
+  color:       var(--ra-muted) !important;
+  font-weight: 600 !important;
+}
+#ContentSelectDropdown menuitem[selected="true"] {
+  background-color: rgba(0,245,255,0.10) !important;
+  color:            var(--ra-cyan) !important;
+}
+#ContentSelectDropdown menuitem[_moz-menuactive="true"] {
+  background-color: rgba(255,45,120,0.14) !important;
+  color:            var(--ra-text) !important;
+}
+#ContentSelectDropdown menuitem[disabled="true"] { color: var(--ra-dim) !important; }
 
 /* ── 10. Find bar ───────────────────────────────────────────────── */
 .browserContainer > .findbar-container > findbar {
