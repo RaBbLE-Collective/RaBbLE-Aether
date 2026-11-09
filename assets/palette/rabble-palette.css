@@ -1,8 +1,8 @@
 /**
  * rabble-palette.css — RaBbLE Canonical Design Tokens
  *
- * Published from RaBbLE-Grimoire/common/RaBbLE-Palette.md
- * Single source: https://grimoire/common/RaBbLE-Palette.md
+ * Published from RaBbLE-Grimoire/RaBbLE-Agent/RaBbLE-Palette.md
+ * Single source: RaBbLE-Grimoire/RaBbLE-Agent/RaBbLE-Palette.md
  *
  * Usage: <link rel="stylesheet" href="path/to/RaBbLE-Aether/assets/palette/rabble-palette.css">
  * All member repos must reference this file — never re-declare these values.
@@ -55,7 +55,7 @@
   --rabble-pink:     #ff79c6;   /* Outrun Pink — grid/horizon */
 
   /* ── Backgrounds (The Void) ──────────────────────────────────── */
-  --rabble-void:     #03000b;   /* Deepest void — boot, full-bleed */
+  --rabble-void:     #0a0010;   /* Retired S320: alias of --rabble-bg, kept so consumers do not break */
   --rabble-bg:       #0a0010;   /* Primary background */
   --rabble-surface:  #12132a;   /* Elevated surface — panels, sidebars */
   --rabble-raised:   #1a1b2e;   /* Cards, inputs, popups */
@@ -64,7 +64,7 @@
   /* ── Text (The Signal) ───────────────────────────────────────── */
   --rabble-text:     #e8e6f0;   /* Primary readable text */
   --rabble-muted:    #6b6880;   /* Secondary, dimmed, comments */
-  --rabble-dimmer:   #3d3860;   /* Tertiary — barely visible */
+  --rabble-dimmer:   #3d3860;   /* Decorative only: 1.9:1 on bg, never body text */
 
   /* ── Semantic ────────────────────────────────────────────────── */
   --rabble-red:      #e05c6f;   /* Error / urgent */

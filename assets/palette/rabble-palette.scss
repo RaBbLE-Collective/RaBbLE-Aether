@@ -1,6 +1,6 @@
 // rabble-palette.scss — RaBbLE Design Tokens (SCSS)
 //
-// Published from RaBbLE-Grimoire/common/RaBbLE-Palette.md
+// Published from RaBbLE-Grimoire/RaBbLE-Agent/RaBbLE-Palette.md
 // Import this before any other Collective SCSS.
 
 // ── Core Neons ─────────────────────────────────────────────────────
@@ -10,7 +10,7 @@ $rabble-violet:   #bf5fff;
 $rabble-pink:     #ff79c6;
 
 // ── Backgrounds ────────────────────────────────────────────────────
-$rabble-void:     #03000b;
+$rabble-void:     #0a0010;   // Retired S320: alias of $rabble-bg
 $rabble-bg:       #0a0010;
 $rabble-surface:  #12132a;
 $rabble-raised:   #1a1b2e;
@@ -19,7 +19,7 @@ $rabble-border:   #2a2840;
 // ── Text ───────────────────────────────────────────────────────────
 $rabble-text:     #e8e6f0;
 $rabble-muted:    #6b6880;
-$rabble-dimmer:   #3d3860;
+$rabble-dimmer:   #3d3860;   // Decorative only: 1.9:1 on bg, never body text
 
 // ── Semantic ───────────────────────────────────────────────────────
 $rabble-red:      #e05c6f;
