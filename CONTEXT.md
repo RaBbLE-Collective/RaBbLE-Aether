@@ -2,7 +2,7 @@
 
 ```
 epoch: 0 | evolution: 0 | echo: 0 | status: active — build system live
-version: v0.0.0.0 (pre-Episode-1)
+version: v0.0.0.1-rc.2 (CDN)
 last session: 2026-05-15 (Session 9)
 ```
 

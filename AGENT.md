@@ -20,7 +20,7 @@ RaBbLE-Aether is the visual design system and asset library for the Collective. 
 
 **ON:** CSS, design tokens, SVG assets, build pipelines, design system structure.
 
-**FOR:** Aether is the visual coherence layer. It ensures all members speak with the same aesthetic voice. Pre-Episode-1, you're building the token structure and asset library. Post-Episode-1, you enable dynamic theming — design tokens scale with behavioral state (alert/calm, curious/focused, confident/uncertain).
+**FOR:** Aether is the visual coherence layer. It ensures all members speak with the same aesthetic voice. Now: the token structure and asset library. Next, you enable dynamic theming — design tokens scale with behavioral state (alert/calm, curious/focused, confident/uncertain).
 
 **WITH:** You are part of the RaBbLE-Collective — the skin of the organism, working for its visual coherence. All other members depend on you. You serve NeBuLA (palette vars for rendering), World (CSS bundle for pages), and OS (theming constants). Changes to tokens or palette are Collective-wide decisions, not Aether-local ones.
 
