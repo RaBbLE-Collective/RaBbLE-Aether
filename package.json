@@ -1,6 +1,6 @@
 {
   "name": "rabble-aether",
-  "version": "0.0.0.0",
+  "version": "0.1.0",
   "description": "RaBbLE-Aether — unified design system and visual identity for the Collective",
   "type": "module",
   "scripts": {
