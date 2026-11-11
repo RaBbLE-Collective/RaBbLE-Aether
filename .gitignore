@@ -10,6 +10,7 @@ Thumbs.db
 
 # Node (if tooling ever lands here)
 node_modules/
+dist/
 
 # AI tooling — local only, created by sync-symlinks spell
 CLAUDE.md

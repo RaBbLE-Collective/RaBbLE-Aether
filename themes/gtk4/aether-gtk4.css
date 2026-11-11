@@ -1,0 +1,26 @@
+/* RaBbLE-Aether GTK4 — minimal; libadwaita severely limits theming */
+/* Palette: RaBbLE-Grimoire/common/RaBbLE-Palette.md */
+
+:root {
+  --accent-color: #00f5ff;
+  --accent-bg-color: rgba(0,245,255,0.15);
+  --destructive-color: #ff2d78;
+  --success-color: #00f5ff;
+  --window-bg-color: #12132a;
+  --window-fg-color: #e8e6f0;
+  --view-bg-color: #1a1b2e;
+  --view-fg-color: #e8e6f0;
+}
+
+/* GTK4/libadwaita sandboxes color overrides — limited effect.
+   Variables above are for apps that listen. */
+
+window {
+  background-color: var(--window-bg-color);
+  color: var(--window-fg-color);
+}
+
+.view {
+  background-color: var(--view-bg-color);
+  color: var(--view-fg-color);
+}

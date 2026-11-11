@@ -1,0 +1,521 @@
+/**
+ * rabble-motion.css — RaBbLE Canonical Motion Library
+ *
+ * All keyframes and animation tokens for the Collective.
+ * Import AFTER rabble-palette.css.
+ *
+ * Sections:
+ *   1. Entrance / Exit
+ *   2. Ambient / Continuous
+ *   3. Neon & Glow Effects
+ *   4. Screen / CRT Effects
+ *   5. Entity States
+ *   6. Utility Classes
+ */
+
+/* ═══════════════════════════════════════════════════════════════
+   1. ENTRANCE / EXIT
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes rabble-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rabble-fade-out {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-8px); }
+}
+
+@keyframes rabble-rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rabble-drop {
+  from { opacity: 0; transform: translateY(-24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rabble-expand {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes rabble-log-in {
+  from { opacity: 0; transform: translateY(3px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   2. AMBIENT / CONTINUOUS
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes rabble-holo {
+  0%, 100% { background-position: 0%; }
+  50%       { background-position: 100%; }
+}
+
+@keyframes rabble-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+
+@keyframes rabble-drift {
+  0%   { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translate(var(--drift-x, 20px), var(--drift-y, -100px)) rotate(360deg); opacity: 0; }
+}
+
+@keyframes rabble-particle {
+  0%   { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  10%  { opacity: 0.6; }
+  90%  { opacity: 0.6; }
+  100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+@keyframes rabble-grid-advance {
+  0%   { background-position: 0 0; }
+  100% { background-position: 50px 50px; }
+}
+
+@keyframes floor-drift {
+  from { background-position: 0 0; }
+  to   { background-position: 0 50px; }
+}
+
+@keyframes rabble-horizon-scroll {
+  0%   { background-position-y: 0; }
+  100% { background-position-y: 100px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   3. NEON & GLOW EFFECTS
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes rabble-neon-flicker {
+  0%, 100% { opacity: 1; }
+  92%       { opacity: 1; }
+  93%       { opacity: 0.4; }
+  94%       { opacity: 1; }
+  97%       { opacity: 0.6; }
+  98%       { opacity: 1; }
+}
+
+@keyframes rabble-neon-flicker-hard {
+  0%, 89%, 91%, 93%, 100% { opacity: 1; }
+  90%, 92%                 { opacity: 0.1; }
+}
+
+@keyframes rabble-glow-pulse-magenta {
+  0%, 100% { box-shadow: var(--rabble-glow-magenta-sm); }
+  50%       {
+    box-shadow:
+      0 0 calc(24px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta) calc(var(--aether-neon, 1) * 100%), transparent),
+      0 0 calc(48px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta) calc(var(--aether-neon, 1) * 30%),  transparent);
+  }
+}
+
+@keyframes rabble-glow-pulse-cyan {
+  0%, 100% { box-shadow: var(--rabble-glow-cyan-sm); }
+  50%       {
+    box-shadow:
+      0 0 calc(24px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan) calc(var(--aether-neon, 1) * 100%), transparent),
+      0 0 calc(48px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan) calc(var(--aether-neon, 1) * 30%),  transparent);
+  }
+}
+
+@keyframes rabble-glow-pulse-violet {
+  0%, 100% { box-shadow: var(--rabble-glow-violet-sm); }
+  50%       {
+    box-shadow:
+      0 0 calc(24px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet) calc(var(--aether-neon, 1) * 100%), transparent),
+      0 0 calc(48px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet) calc(var(--aether-neon, 1) * 30%),  transparent);
+  }
+}
+
+@keyframes rabble-status-pulse {
+  0%, 100% { opacity: 0.4; transform: scale(0.9); }
+  50%       { opacity: 1;   transform: scale(1.15); }
+}
+
+@keyframes rabble-logo-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 calc(30px  * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta) calc(var(--aether-neon, 1) * 100%), transparent),
+      0 0 calc(60px  * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet) calc(var(--aether-neon, 1) * 100%), transparent);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow:
+      0 0 calc(50px  * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta) calc(var(--aether-neon, 1) * 100%), transparent),
+      0 0 calc(100px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet) calc(var(--aether-neon, 1) * 100%), transparent);
+  }
+}
+
+@keyframes rabble-border-rotate {
+  from { --border-angle: 0deg; }
+  to   { --border-angle: 360deg; }
+}
+
+@keyframes rabble-header-sweep {
+  0%   { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   4. SCREEN / CRT EFFECTS
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes rabble-scanline-travel {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+@keyframes rabble-crt-noise {
+  0%   { transform: translate(0, 0); }
+  10%  { transform: translate(-1px, 1px); }
+  20%  { transform: translate(1px, -1px); }
+  30%  { transform: translate(-1px, -1px); }
+  40%  { transform: translate(1px, 1px); }
+  50%  { transform: translate(0, 1px); }
+  60%  { transform: translate(-1px, 0); }
+  70%  { transform: translate(1px, 0); }
+  80%  { transform: translate(0, -1px); }
+  90%  { transform: translate(1px, 1px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes rabble-star-twinkle {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 1; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   5. ENTITY STATES
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes rabble-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes rabble-resonance {
+  0%   { filter: hue-rotate(0deg) brightness(1); }
+  25%  { filter: hue-rotate(15deg) brightness(1.1); }
+  50%  { filter: hue-rotate(-10deg) brightness(1.05); }
+  75%  { filter: hue-rotate(8deg) brightness(1.1); }
+  100% { filter: hue-rotate(0deg) brightness(1); }
+}
+
+@keyframes rabble-glitch {
+  0%, 100% { clip-path: none; transform: translate(0); }
+  20%       { clip-path: inset(20% 0 40% 0); transform: translate(-2px, 1px); }
+  40%       { clip-path: inset(50% 0 10% 0); transform: translate(2px, -1px); }
+  60%       { clip-path: inset(5% 0 70% 0); transform: translate(-1px, 2px); }
+  80%       { clip-path: inset(80% 0 5% 0); transform: translate(1px, -2px); }
+}
+
+@keyframes rabble-static {
+  0%, 100% { opacity: 1; }
+  20%       { opacity: 0.7; }
+  40%       { opacity: 0.9; }
+  60%       { opacity: 0.6; }
+  80%       { opacity: 0.85; }
+}
+
+@keyframes rabble-core-pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  50%       { transform: translate(-50%, -50%) scale(1.5); opacity: 0.5; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   6. UTILITY CLASSES
+   ═══════════════════════════════════════════════════════════════ */
+
+.rabble-anim-fade-in    { animation: rabble-fade-in    0.25s ease forwards; }
+.rabble-anim-rise       { animation: rabble-rise       0.4s ease forwards; }
+.rabble-anim-expand     { animation: rabble-expand     0.3s ease forwards; }
+.rabble-anim-float      { animation: rabble-float      3s ease-in-out infinite; }
+.rabble-anim-holo       { animation: rabble-holo              6s ease infinite; background-size: 300%; }
+.rabble-anim-flicker    { animation: rabble-neon-flicker      4s ease-in-out infinite; }
+.rabble-anim-blink      { animation: rabble-blink      1.1s step-end infinite; }
+.rabble-anim-status     { animation: rabble-status-pulse      2s ease-in-out infinite; }
+.rabble-anim-glow-m     { animation: rabble-glow-pulse-magenta 2.5s ease-in-out infinite; }
+.rabble-anim-glow-c     { animation: rabble-glow-pulse-cyan    2.5s ease-in-out infinite; }
+.rabble-anim-glow-v     { animation: rabble-glow-pulse-violet  2.5s ease-in-out infinite; }
+.rabble-anim-resonance  { animation: rabble-resonance  8s ease-in-out infinite; }
+.rabble-anim-glitch     { animation: rabble-glitch     0.4s steps(1) infinite; }
+
+/* ═══════════════════════════════════════════════════════════════
+   7. BRAND FLOW — cyan ↔ magenta text animation
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes brand-harmony {
+  0%   { background-position:   0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position:   0% 50%; }
+}
+
+@keyframes brand-glow {
+  0%, 100% {
+    text-shadow:
+      0 0 calc(14px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan) calc(var(--aether-neon, 1) * 50%), transparent),
+      0 0 calc(28px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan) calc(var(--aether-neon, 1) * 20%), transparent);
+  }
+  50% {
+    text-shadow:
+      0 0 calc(14px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta) calc(var(--aether-neon, 1) * 50%), transparent),
+      0 0 calc(28px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta) calc(var(--aether-neon, 1) * 20%), transparent);
+  }
+}
+
+/* Harmony flow — cyan chases magenta across a flowing gradient */
+@keyframes harmony-flow {
+  0%, 100% { background-position: 0%; }
+  50% { background-position: 100%; }
+}
+
+@keyframes page-fade-out {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-8px); }
+}
+
+@keyframes overlay-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(10px) scale(0.97); }
+  to   { opacity: 1; transform: none; }
+}
+
+.rabble-anim-brand-flow {
+  animation: brand-glow 7s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+.rabble-anim-brand-flow.slow { animation-duration: 11s; }
+.rabble-anim-brand-flow.fast { animation-duration: 4.5s; }
+
+/* Animated angle property for conic-gradient spin — no element rotation,
+   only the gradient origin angle moves, so the mask ring stays rectangular. */
+@property --harmony-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes harmony-spin {
+  from { --harmony-angle: 0deg; }
+  to   { --harmony-angle: 360deg; }
+}
+
+/* Continuous unidirectional scroll for the line bar */
+@keyframes harmony-scroll {
+  from { background-position: 0% center; }
+  to   { background-position: 100% center; }
+}
+
+/* Glow cycles through the same color order as the spin, linear so it loops cleanly */
+@keyframes harmony-glow {
+  0%   {
+    box-shadow:
+      0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan) calc(var(--aether-neon, 1) * 35%), transparent),
+      inset 0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan) calc(var(--aether-neon, 1) * 8%), transparent);
+  }
+  33%  {
+    box-shadow:
+      0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet) calc(var(--aether-neon, 1) * 35%), transparent),
+      inset 0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-violet) calc(var(--aether-neon, 1) * 8%), transparent);
+  }
+  66%  {
+    box-shadow:
+      0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta) calc(var(--aether-neon, 1) * 35%), transparent),
+      inset 0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-magenta) calc(var(--aether-neon, 1) * 8%), transparent);
+  }
+  100% {
+    box-shadow:
+      0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan) calc(var(--aether-neon, 1) * 35%), transparent),
+      inset 0 0 calc(12px * var(--aether-neon, 1)) color-mix(in srgb, var(--rabble-cyan) calc(var(--aether-neon, 1) * 8%), transparent);
+  }
+}
+
+/* Harmony line — 1px scrolling accent, colors always full-spectrum, no fade to void */
+.rabble-harmony-line {
+  position: relative;
+  overflow: hidden;
+}
+.rabble-harmony-line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background-image: linear-gradient(90deg,
+    var(--rabble-cyan),
+    var(--rabble-violet),
+    var(--rabble-magenta),
+    var(--rabble-cyan));
+  background-size: 200% 100%;
+  animation: harmony-scroll 9s linear infinite;
+  opacity: 0.9;
+}
+.rabble-harmony-line.slow::after { animation-duration: 12s; }
+.rabble-harmony-line.fast::after { animation-duration: 6s; }
+
+/* Border harmony — spinning conic-gradient ring, mask clips to border only.
+   Uses @property so only the gradient angle animates — the mask ring stays
+   rectangular and the element background is never affected. */
+.rabble-border-harmony {
+  position: relative;
+  animation: harmony-glow 9s linear infinite;
+}
+.rabble-border-harmony::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--harmony-angle),
+    var(--rabble-cyan),
+    var(--rabble-violet),
+    var(--rabble-magenta),
+    var(--rabble-cyan));
+  animation: harmony-spin 9s linear infinite;
+  -webkit-mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+  mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+.rabble-border-harmony.slow { animation-duration: 12s; }
+.rabble-border-harmony.slow::before { animation-duration: 12s; }
+.rabble-border-harmony.fast { animation-duration: 6s; }
+.rabble-border-harmony.fast::before { animation-duration: 6s; }
+
+/* ═══════════════════════════════════════════════════════════════
+   8. SIGIL STATES — generalized from rd2-sigil-pulse (dock source)
+   Used on any .rabble-sigil element (dock, entity indicators, etc.)
+   .is-thinking = 800ms · .is-speaking = 400ms
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes rabble-sigil-pulse {
+  from { opacity: 0.5; text-shadow: none; }
+  to   { opacity: 1;   text-shadow: 0 0 8px currentColor; }
+}
+
+.rabble-sigil {
+  font-family: var(--rabble-font-mono);
+  font-size: 13px;
+  color: var(--rabble-cyan);
+  flex-shrink: 0;
+  line-height: 1;
+  transition: color 150ms ease, text-shadow 150ms ease;
+  /* Calm idle breathe — overridden by .is-thinking / .is-speaking below */
+  animation: rabble-sigil-breathe 4s ease-in-out infinite;
+}
+
+.rabble-sigil.is-thinking {
+  color: var(--rabble-violet);
+  animation: rabble-sigil-pulse 800ms ease infinite alternate;
+}
+
+.rabble-sigil.is-speaking {
+  color: var(--rabble-magenta);
+  animation: rabble-sigil-pulse 400ms ease infinite alternate;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   9. STAGGERED ENTRANCE — generalized from memberLineIn (panels source)
+   Apply .rabble-stagger-in to a container; children animate in with
+   :nth-child delays (80ms steps, up to 8 children by default).
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes rabble-stagger-line-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.rabble-stagger-in > * {
+  opacity: 0;
+  animation: rabble-stagger-line-in 300ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.rabble-stagger-in > *:nth-child(1) { animation-delay:   0ms; }
+.rabble-stagger-in > *:nth-child(2) { animation-delay:  80ms; }
+.rabble-stagger-in > *:nth-child(3) { animation-delay: 160ms; }
+.rabble-stagger-in > *:nth-child(4) { animation-delay: 240ms; }
+.rabble-stagger-in > *:nth-child(5) { animation-delay: 320ms; }
+.rabble-stagger-in > *:nth-child(6) { animation-delay: 400ms; }
+.rabble-stagger-in > *:nth-child(7) { animation-delay: 480ms; }
+.rabble-stagger-in > *:nth-child(8) { animation-delay: 560ms; }
+
+.rabble-stagger-in.fast > *:nth-child(1) { animation-delay:   0ms; }
+.rabble-stagger-in.fast > *:nth-child(2) { animation-delay:  40ms; }
+.rabble-stagger-in.fast > *:nth-child(3) { animation-delay:  80ms; }
+.rabble-stagger-in.fast > *:nth-child(4) { animation-delay: 120ms; }
+.rabble-stagger-in.fast > *:nth-child(5) { animation-delay: 160ms; }
+.rabble-stagger-in.fast > *:nth-child(6) { animation-delay: 200ms; }
+.rabble-stagger-in.fast > *:nth-child(7) { animation-delay: 240ms; }
+.rabble-stagger-in.fast > *:nth-child(8) { animation-delay: 280ms; }
+
+/* ═══════════════════════════════════════════════════════════════
+   10. GLITCH VEIL KEYFRAME — toggled by .rabble-glitch-veil.is-active
+   Class defined in rabble-components.css; keyframe lives here.
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes rabble-veil-stutter {
+  0%   { opacity: 0; transform: translateX(0); }
+  35%  { opacity: 0.9; transform: translateX(-6px); }
+  60%  { opacity: 0.25; transform: translateX(4px); }
+  100% { opacity: 0.7; transform: translateX(0); }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   11. CHROMATIC TEXT SHUDDER — generalized from word-shudder
+   (Chrysalis ep1 RaBbLE-liminal.css:440 word-shudder).
+   Toggled by .rabble-text-shudder.is-active in components.
+   RGB-split: cyan one way, magenta the other, violet bloom.
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes rabble-text-shudder {
+  0%   {
+    text-shadow:
+      -3px 0 var(--rabble-cyan),
+       3px 0 var(--rabble-magenta),
+       0 0 60px var(--rabble-violet);
+  }
+  100% {
+    text-shadow:
+       3px 0 var(--rabble-cyan),
+      -3px 0 var(--rabble-magenta),
+       0 0 60px var(--rabble-violet);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   12. 3D PERSPECTIVE REVEAL — generalized from gv-reader-page-in
+   (Chrysalis ep1 RaBbLE-Grimoire.css:119 gv-reader-page-in).
+   Card/page entrance flip on the Y axis.
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes rabble-reveal-3d {
+  from { opacity: 0; transform: perspective(800px) rotateY(-22deg); }
+  to   { opacity: 1; transform: perspective(800px) rotateY(0); }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   13. SIGIL BREATHE — calm idle pulse for .rabble-sigil default state
+   (Chrysalis ep1 RaBbLE-liminal.css:103 lsb-breathe — opacity breathe).
+   Gentle + slow so the resting sigil feels alive; .is-thinking /
+   .is-speaking override the animation entirely (higher specificity).
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes rabble-sigil-breathe {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.55; }
+}
