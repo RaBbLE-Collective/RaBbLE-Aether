@@ -1,0 +1,57 @@
+# aether-kvantum.map — deterministic Catppuccin Mocha (Lavender) -> Aether recolor map
+#
+# Source: Catppuccin/Kvantum  @ 71105d224fef95dd023691303477ce3eea487457
+#         themes/catppuccin-mocha-lavender/  (MIT, (c) 2021 Catppuccin)
+# Target: RaBbLE-Aether synthwave-outrun palette (RaBbLE-Palette.md, 13 hexes).
+#
+# Format:  <source-hex-lowercase> <aether-hex-lowercase>   # rationale
+# Applied case-insensitively to BOTH the .svg and the .kvconfig surfaces.
+# Re-run with:  themes/_palette/recolor.sh   (regenerates from a fresh clone)
+#
+# === Mocha structural backgrounds ===
+1e1e2e 12132a   # base        -> surface  (window bg)
+181825 1a1b2e   # mantle      -> raised   (base/panels)
+11111b 0a0010   # crust       -> void
+141414 0a0010   # near-black frame -> void
+31363b 0a0010   # dark frame  -> void
+#
+# === Mocha frames / borders (surface0/1) ===
+313244 2a2840   # surface0    -> border
+45475a 2a2840   # surface1    -> border
+#
+# === Mocha overlays / muted (surface2/overlay0/subtext0) ===
+585b70 6b6880   # surface2 / disabled.text -> muted
+6c7086 6b6880   # overlay0    -> muted
+a6adc8 6b6880   # subtext0    -> muted
+9399b2 6b6880   # overlay1 (inactive tab text) -> muted
+#
+# === Accent (lavender) and its rings ===
+b4befe ff2d78   # lavender (accent)        -> magenta (highlight/active)
+a5aee9 bf5fff   # lavender-dim (inactive)  -> violet  (inactive ring)
+b9c3fc bf5fff   # lavender link.visited    -> violet
+cba6f7 bf5fff   # mauve                    -> violet
+#
+# === Text ===
+cdd6f4 e8e6f0   # text -> primary text
+#
+# === Semantic ===
+f38ba8 e05c6f   # red    -> red
+a6e3a1 50fa7b   # green  -> green   (if present)
+f9e2af f1fa8c   # yellow -> yellow  (if present)
+#
+# === Shadow gradients (black w/ opacity -> void) ===
+000000 0a0010   # shadow stops -> void (opacity preserved)
+#
+# === Metallic-sheen highlight gradients (slider cursor etc.) -> bright text ===
+7f7f7f e8e6f0
+919191 e8e6f0
+999999 e8e6f0
+a6a6a6 e8e6f0
+b4b4b4 e8e6f0
+b6b6b6 e8e6f0
+bebebe e8e6f0
+bfbfbf e8e6f0
+d2d2d2 e8e6f0
+d6d6d6 e8e6f0
+dcdcdc e8e6f0
+eaeaea e8e6f0

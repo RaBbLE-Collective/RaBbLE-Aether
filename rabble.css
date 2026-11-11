@@ -1,0 +1,14 @@
+/**
+ * rabble.css — Local dev-server entry (DO NOT deploy)
+ *
+ * Use only with a local HTTP server pointed at the Aether root.
+ * The real build entry is src/entry.css → dist/aether.min.css via:
+ *   npm run build      (prod)
+ *   npm run build:dev  (dev + sourcemap)
+ *   npm run cast       (build + copy to World)
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Exo+2:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Share+Tech+Mono&display=swap');
+@import url('assets/palette/rabble-palette.css');
+@import url('assets/motion/rabble-motion.css');
+@import url('assets/components/rabble-components.css');
