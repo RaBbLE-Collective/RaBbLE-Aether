@@ -1,9 +1,9 @@
 # CONTEXT.md — RaBbLE-Aether
 
 ```
-epoch: 0 | evolution: 0 | echo: 0 | status: active — build system live
-version: v0.0.0.1-rc.2 (CDN)
-last session: 2026-05-15 (Session 9)
+epoch: 0 | status: active, build system live
+version: 0.1.0 (Genesis; CDN path /v0.1.0/)
+last session: 2026-11-11 (S324)
 ```
 
 RaBbLE-Aether is the visual design system and canonical asset library for the RaBbLE Collective. Ships as a CDN-distributed CSS bundle. All member repos consume it — no local copies.
@@ -66,7 +66,7 @@ npm run build                              # production build → dist/aether.mi
 | esbuild build system | **Done** — `npm run build`, `build:dev`, `build:watch` |
 | CDN delivery via dev-serve.sh | **Done** — all World pages loading from `/aether/v0.0.0.0/aether.css` |
 | Portal glyph SVG | **Done** — `assets/logos/rabble-portal-glyphs.svg` |
-| Production deploy to Cloudflare Workers | **Live** — `.github/workflows/deploy.yml` (`npm run build` → `npx wrangler deploy`, triggers on push to `main` or `v*` tags) + `wrangler.jsonc` (Workers static-assets site `rabble-aether`, serves `dist/`). Verified serving 2026-07-05: `https://aether.joinrabble.world/aether.min.css` returns 200. **Caveat:** the live bundle is smaller/older than the current `dist/aether.min.css` on this branch — `main` doesn't yet have this workflow/wrangler pair (all deploy work is on `new-horizons`), so the trigger conditions haven't fired against current source; the live artifact likely came from a manual `wrangler deploy` or an older `main` state. Not R2 — that was superseded by the Workers migration (see commit history on `deploy.yml`/`wrangler.jsonc`). |
+| Production deploy to Cloudflare Workers | **Live**: `wrangler.jsonc` (Workers static-assets site `rabble-aether`, serves all of `dist/`, every version path included). Deploy locally with `bash RaBbLE-Grimoire/spells/cloudflare-ctl.sh deploy aether v<version>`. `.github/workflows/deploy.yml` is manual only (S324): a clean CI checkout holds only the root bundle, so an automatic deploy on push or tag would delete the versioned paths World pins. `v0.1.0` verified 200 on 2026-11-11. |
 | Cache-busting strategy for version bumps | **Pending** |
 | `prefers-reduced-motion` on harmony animations | **Pending** |
 | Entity visual spec + reference images | **Done** — `RaBbLE-Entity-Visual-Spec.md`, `assets/entity/` |
